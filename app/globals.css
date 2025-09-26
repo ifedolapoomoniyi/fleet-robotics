@@ -1,11 +1,21 @@
 /* Minimal global styles after clearing defaults */
 @import "tailwindcss";
 
-html, body, #__next {
+html,
+body,
+#__next {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
   color: #111;
-  background: black
+  background: black;
+  font-family: var(--font-allianceNo2);
+}
+
+@theme {
+  --font-allianceNo2: var(--font-allianceNo2), system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial;
+
+  --font-chakrapetch: var(--font-chakrapetch), system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }

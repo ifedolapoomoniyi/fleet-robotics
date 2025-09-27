@@ -6,12 +6,16 @@ import Infrastructure from "@/components/technology/infrastructure";
 import Marketplace from "@/components/technology/marketplace";
 import EverythingRunsThrough from "@/components/roadmap/EverythingRunsThrough";
 import {WhyItMattersSection} from "@/components/roadmap/WhyItMattersSection";
+import MarketplaceCarousel from "@/components/technology/marketplace-carousel";
+import RandomSection from "@/components/technology/random-section";
 
 const Page = () => {
     return (
         <main  className=" overflow-hidden w-full flex flex-col relative min-h-screen bg-black text-white">
             <HeroTechnology />
             <Marketplace/>
+            <MarketplaceCarousel/>
+            <RandomSection/>
             <EverythingRunsThrough/>
             <DataLayer/>
             <Infrastructure/>

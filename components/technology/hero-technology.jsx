@@ -64,7 +64,7 @@ const HeroTechnology = () => {
                         </span>
                     </h1>
             </div>
-          <div className="grid grid-cols-1  w-full justify-end items-start fix right-1/6  h-full">
+          <div className="grid grid-cols-1  w-full justify-end items-start right-1/6  h-full">
               <div className="relative z-10 flex flex-col items-start gap-10 justify-start mt-[100px] mb-[0px] ml-10 md:ml-auto md:mr-10">
                   <div className="max-w-[700px] opacity-90 text-left text-white text-xl font-normal my-6 px-5">
                       <h2 className="mb-7 font-semibold text-xl">FLEET IDs</h2>

@@ -4,7 +4,7 @@ import "../roadmap/ui/slideAnimation.css";
 const EverythingRunsThrough = () => {
   return (
     <div
-  className="relative overflow-hidden h-[300px] mt-8 flex items-center bg-[url('/images/background.svg')] bg-cover bg-center"
+  className="relative overflow-hidden h-[500px] mt-8 flex items-center bg-[url('/images/background.svg')] bg-cover bg-center"
 >
   <div className="slide-animation-fast">
     {/* First duplicate */}

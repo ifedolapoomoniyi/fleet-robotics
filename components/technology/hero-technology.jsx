@@ -1,7 +1,6 @@
 "use client";
 import React, {useState} from "react";
 import Image from "next/image";
-import Button from "@/components/button";
 
 const HeroTechnology = () => {
     const [videoFailed, setVideoFailed] = useState(false);
@@ -75,9 +74,9 @@ const HeroTechnology = () => {
                       </p>
                   </div>
                   <ul className="max-w-[850px] opacity-95 uppercase text-left text-white text-xl font-normal my-6 px-5 list-none space-y-3">
-                      <li className="flex flex-row items-center gap-3"><img src="/images/Frame%20108029.svg" alt="list-icon"/>Built on DID/NFT Standards</li>
-                      <li className="flex flex-row items-center gap-3"><img src="/images/Frame%20108029.svg" alt="list-icon"/>Linked to secure hardware fingerprints (chip, controller, TPM)</li>
-                      <li className="flex flex-row items-center gap-3"><img src="/images/Frame%20108029.svg" alt="list-icon"/>Portable across chains</li>
+                      <li className="flex flex-row items-center gap-3"><Image src="/images/Frame%20108029.svg" alt="list-icon" width={10} height={10}/>Built on DID/NFT Standards</li>
+                      <li className="flex flex-row items-center gap-3"><Image src="/images/Frame%20108029.svg" alt="list-icon" width={10} height={10}/>Linked to secure hardware fingerprints (chip, controller, TPM)</li>
+                      <li className="flex flex-row items-center gap-3"><Image src="/images/Frame%20108029.svg" alt="list-icon" width={10} height={10}/>Portable across chains</li>
                   </ul>
               </div>
               <div className="relative z-10 flex flex-col items-center mt-[20px] mb-[100px]"></div>

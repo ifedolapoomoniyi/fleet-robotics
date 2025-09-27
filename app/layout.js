@@ -20,7 +20,7 @@ const allianceNo2 = localFont({
 });
 
 const allianceNo2Light = localFont({
-  src: "../public/fonts/Alliance-No2-Regular/Alliance-No.2-Light.otf",
+  src: "../public/fonts/Alliance-No2-Regular/AllianceNo1-Light.ttf",
   weight: "300", // mark it as light
   style: "normal",
   variable: "--font-allianceNo2Light",

@@ -1,11 +1,12 @@
 "use client";
 import React from 'react';
+import HeroTechnology from "@/components/technology/hero-technology";
 
 const Page = () => {
     return (
-        <div className="flex items-center justify-center h-screen text-white">
-            Technology Page
-        </div>
+        <main className="flex items-center justify-center  text-white">
+            <HeroTechnology />
+        </main>
     );
 };
 

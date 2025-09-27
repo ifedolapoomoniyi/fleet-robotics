@@ -32,7 +32,7 @@ const Cards = () => {
   return (
     <div className="p-6 flex flex-row gap-5 mt-10 relative">
       {/* line strip */}
-      <div class="w-full absolute top-[135px] h-2 bg-gradient-to-r from-red-800/0 via-orange-600 to-orange-800/0 rounded-full z-10"></div>
+      <div className="w-full absolute top-[135px] h-2 bg-gradient-to-r from-red-800/0 via-orange-600 to-orange-800/0 rounded-full z-10"></div>
       {steps.map((step, key) => (
         <div className="relative w-[300px] group transition-all duration-500" key={key}>
           {/* design elements */}

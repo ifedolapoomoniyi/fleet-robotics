@@ -40,18 +40,18 @@ const DataLayer = () => {
             )}
 
             {/* Foreground content */}
-            <div className="relative z-10 flex top-0 flex-col items-center justify-center px-4 py-6 text-center text-white">
+            <div className="relative z-10 flex top-0 flex-col items-center justify-center px-4 py-6 text-center text-white bg-gradient-to-b from-[#000000] via-[#000000] to-transparent">
                 <h6 className="text-[#b4b4b4] font-chakrapetch font-medium text-sm sm:text-base md:text-lg">
                     DATA LAYER
                 </h6>
 
-                <h1 className="mt-4 font-black text-3xl sm:text-4xl md:text-5xl lg:text-7xl leading-tight w-full">
-                   Turning Robot Data <span className="font-light text-[#b4b4b4] text-2xl sm:text-3xl md:text-5xl lg:text-7xl">into an Asset</span>
+                <h1 className="mt-2 font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight w-full">
+                   Turning Robot Data <span className="font-light text-[#ffffff]/90 text-2xl sm:text-3xl md:text-5xl lg:text-6xl">into an Asset</span>
                     {/*<span className="block font-light text-[#b4b4b4] text-2xl sm:text-3xl md:text-5xl lg:text-7xl">*/}
 
                 </h1>
 
-                <p className="mt-4 max-w-4xl text-sm sm:text-base md:text-lg lg:text-xl font-light text-[#b4b4b4] leading-relaxed">
+                <p className="mt-2 max-w-4xl text-xs sm:text-base md:text-lg font-light text-[#ffffff]/90 leading-relaxed">
                     Robots generate valuable streams of data,{" "}
                     <strong className="font-bold text-white">
                         GPS, video, sensor readings.

@@ -9,7 +9,7 @@ const Infrastructure = () => {
                 <h6 className="text-[#b4b4b4] font-chakrapetch font-medium sm:text-sm md:text-lg text-left mb-6">
                    INFRASTRUCTURE
                 </h6>
-                <h1 className='font-black text-3xl sm:text-4xl  lg:text-7xl text-left w-full'>
+                <h1 className='font-black text-3xl sm:text-4xl  lg:text-6xl text-left w-full'>
                     Infrastructure for a Robot Economy
                 </h1>
             </div>

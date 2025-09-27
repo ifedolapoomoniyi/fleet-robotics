@@ -8,13 +8,13 @@ const EverythingRunsThrough = () => {
 >
   <div className="slide-animation-fast">
     {/* First duplicate */}
-    <span className="text-[#878787] text-[8rem] font-normal font-allianceNo2 whitespace-nowrap">
+    <span className="text-[#333333] text-[8rem] font-normal font-allianceNo2 whitespace-nowrap">
       Everything&nbsp;runs&nbsp;through&nbsp;
       <span className="font-extrabold text-white">$FLEET</span>.&nbsp;
     </span>
 
     {/* Second duplicate */}
-    <span className="text-[#878787] text-[8rem] font-normal font-allianceNo2 whitespace-nowrap">
+    <span className="text-[#333333] text-[8rem] font-normal font-allianceNo2 whitespace-nowrap">
       Everything&nbsp;runs&nbsp;through&nbsp;
       <span className="font-extrabold text-white">$FLEET</span>.&nbsp;
     </span>

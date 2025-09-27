@@ -2,7 +2,7 @@ import React from "react";
 
 export const EconomicRailSection = () => {
   return (
-    <section className="relative  bg-[url('/images/what-we-do-bg.svg')] bg-contain  relative w-full h-[300px] md:h-[700px] lg:h-[700.67px] overflow-hidden">
+    <section className="relative  bg-[url('/images/what-we-do-bg.svg')] bg-cover  relative w-full h-[300px] md:h-[700px] lg:h-[700.67px] overflow-hidden">
       <div className="absolute top-16  left-0 w-full h-[400px] md:h-[600px] lg:h-[779px] " />
 
       {/* <img

@@ -2,11 +2,11 @@ import React from "react";
 
 export const WhyItMattersSection = () => {
   return (
-    <section className="relative w-full mt-16 md:mt-24 lg:mt-[166.7px] min-h-[400px] md:min-h-[600px] lg:h-[798.67px] rounded-[10.67px] overflow-hidden">
+    <section className="relative w-full mt-16 mb-24 md:mt-24 lg:mt-[166.7px] min-h-[400px] md:min-h-[600px] lg:h-[798.67px] rounded-[10.67px] overflow-hidden">
       {/* Background frame */}
       <img
-        className="absolute top-0 left-0 w-full h-full object-cover hidden lg:block transform rotate-180"
-        src="/images/what-we-do-bg.svg"
+        className="absolute top-0 left-0 w-full object-cover h-full p lg:block transform rotate-180"
+        src="/images/r_background.svg"
         alt="Frame"
       />
 
@@ -35,14 +35,7 @@ export const WhyItMattersSection = () => {
           </div>
         </div>
 
-        {/* Small-screen image */}
-        <div className="flex-shrink-0 lg:hidden">
-          <img
-            className="w-48 h-48 md:w-64 md:h-64 object-contain"
-            src="/images/what-we-do-bg.svg"
-            alt="Roboruk"
-          />
-        </div>
+   
       </div>
 
       {/* Right-side big image */}

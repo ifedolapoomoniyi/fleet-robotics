@@ -63,7 +63,7 @@ const DataLayer = () => {
             </div>
 
             {/* Footer caption */}
-            <div className="relative z-10 px-4 pb-40 text-center uppercase">
+            <div className="relative z-10 px-4 pb-10 text-center uppercase">
                 <h6 className="text-[#b4b4b4] font-chakrapetch font-medium text-xs sm:text-sm md:text-base lg:text-lg">
                     Data isn’t wasted — it becomes a new revenue stream.
                 </h6>

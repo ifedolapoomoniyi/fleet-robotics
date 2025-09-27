@@ -41,7 +41,7 @@ export const ProblemSolutionSection = () => {
         {/* Left Problem Column */}
         <div className="relative  bg-black lg:border-r border-[#1a1a1a] flex flex-col overflow-hidden">
           {/* MASK DIV: hides image until it slides out */}
-          <div className="absolute top-[90px] right-0 w-[430px] h-[663px] overflow-hidden">
+          <div className="absolute top-[90px] right-0 w-[430px] h-[663px] overflow-hidden hidden md:flex">
             <motion.img
               alt="Dark canister"
               src="/images/untitled-2-1.png"
@@ -78,7 +78,7 @@ export const ProblemSolutionSection = () => {
         {/* Right Solution Column */}
         <div className="relative flex flex-col overflow-hidden">
           {/* MASK DIV for right image */}
-          <div className="absolute top-[90px] left-0 w-[430px] h-[666px] overflow-hidden">
+          <div className="hidden md:flex absolute top-[90px] left-0 w-[430px] h-[666px] overflow-hidden">
             <motion.img
               alt="Light canister"
               src="/images/untitled-2.png"

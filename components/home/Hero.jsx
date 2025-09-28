@@ -2,13 +2,17 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="bg-[url('/images/hero-bg.png')] h-[130vh] bg-cover bg-no-repeat bg-center flex flex-col items-center mb-[200px] font-allianceNo2">
-      <div className="self-stretch text-center justify-start pt-[100px] mt-[50px]">
-        <span className="text-white text-7xl font-medium font-chakrapetch">
+    <section className="bg-[url('/images/hero-bg.png')] h-[90vh] md:h-[130vh] bg-cover bg-no-repeat bg-center flex flex-col items-center mb-[200px] font-allianceNo2 p-4 relative z-0">
+      {/* dark bg overlay */}
+      <div className="absolute inset-0 bg-black/60 md:bg-black/40 -z-10"></div>
+
+      {/* content */}
+      <div className="self-stretch text-center justify-start pt-[18vh] md:pt-[100px] mt-[50px]">
+        <span className="text-white text-4xl md:text-7xl font-semibold">
           Hire Robots Instantly
           <br />
         </span>
-        <span className="text-white/90 text-7xl font-light ">
+        <span className="text-white/85 text-4xl md:text-7xl font-light tracking-tighter">
           Pay in Crypto. Trust the Blockchain.
         </span>
       </div>

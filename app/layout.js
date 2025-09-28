@@ -39,11 +39,8 @@ const chakraPetch = localFont({
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${chakraPetch.variable} ${allianceNo2.variable} ${allianceNo2Light.variable}`}
-    >
-      <body>
+    <html lang="en" className={`${chakraPetch.variable} ${allianceNo2.variable} ${allianceNo2Light.variable} text-white`}>
+      <body className="font-allianceNo2">
         <Navbar />
         <main
           className="pt-[84px] md:pt-[84px] lg:pt-[84px] 

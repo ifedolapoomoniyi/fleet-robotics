@@ -170,7 +170,7 @@ export default function TeamCarousel() {
                                     {/* Image Container with Gradient Background */}
                                     <div className="relative w-64 h-80 md:w-80 md:h-96 rounded-2xl overflow-hidden">
                                         {/* Gradient Background */}
-                                        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#eb2f01] to-black opacity-90" />
+                                        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#eb2f01] to-black opacity-95" />
 
                                         {/* Profile Image */}
                                         <Image

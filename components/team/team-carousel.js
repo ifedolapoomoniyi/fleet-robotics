@@ -48,10 +48,10 @@ const teamMembers = [
     },
     {
         id: 4,
-        name: "Michael Chen",
-        title: "Lead Developer",
+        name: "Emily Rodriguez",
+        title: "Lead Designer",
         description:
-            "Michael Chen is the Lead Developer at First Robotics. He is responsible for the overall direction of the company and the development of its core technology. Michael is a passionate advocate for the use of robotics to improve people's lives.",
+            "Emily Rodriguez is the Lead Designer at First Robotics. She is responsible for the overall direction of the company and the development of its core technology. Emily is a passionate advocate for the use of robotics to improve people's lives.",
         image: "/images/team/Rectangle 3.svg",
         social: {
             linkedin: "#",
@@ -61,10 +61,10 @@ const teamMembers = [
     },
     {
         id: 5,
-        name: "Michael Chen",
-        title: "Lead Developer",
+        name: "David Park",
+        title: "Product Manager",
         description:
-            "Michael Chen is the Lead Developer at First Robotics. He is responsible for the overall direction of the company and the development of its core technology. Michael is a passionate advocate for the use of robotics to improve people's lives.",
+            "David Park is the Product Manager at First Robotics. He is responsible for the overall direction of the company and the development of its core technology. David is a passionate advocate for the use of robotics to improve people's lives.",
         image: "/images/team/Rectangle 2.svg",
         social: {
             linkedin: "#",
@@ -74,10 +74,10 @@ const teamMembers = [
     },
     {
         id: 6,
-        name: "Michael Chen",
-        title: "Lead Developer",
+        name: "Lisa Wang",
+        title: "AI Specialist",
         description:
-            "Michael Chen is the Lead Developer at First Robotics. He is responsible for the overall direction of the company and the development of its core technology. Michael is a passionate advocate for the use of robotics to improve people's lives.",
+            "Lisa Wang is the AI Specialist at First Robotics. She is responsible for the overall direction of the company and the development of its core technology. Lisa is a passionate advocate for the use of robotics to improve people's lives.",
         image: "/images/team/Rectangle 1.svg",
         social: {
             linkedin: "#",
@@ -86,6 +86,7 @@ const teamMembers = [
         },
     },
 ]
+
 
 export default function TeamCarousel() {
     const [currentIndex, setCurrentIndex] = useState(1) // Start with middle item
@@ -123,35 +124,45 @@ export default function TeamCarousel() {
     }, [])
 
     const getCardPosition = (index) => {
-        const diff = index - currentIndex
-        if (diff === 0) return "center"
-        if (diff === -1 || (diff === teamMembers.length - 1 && currentIndex === 0)) return "left"
-        if (diff === 1 || (diff === -(teamMembers.length - 1) && currentIndex === teamMembers.length - 1)) return "right"
-        return "hidden"
+        const total = teamMembers.length;
+        let diff = index - currentIndex;
+        // Handle wrap-around for left/right positions
+        if (diff < -Math.floor(total / 2)) diff += total;
+        if (diff > Math.floor(total / 2)) diff -= total;
+        if (diff === 0) return "center";
+        if (diff === -1) return "left";
+        if (diff === -2) return "left2";
+        if (diff === 1) return "right";
+        if (diff === 2) return "right2";
+        return "hidden";
     }
 
     return (
-        <div className="relative w-full max-w-7xl mx-auto px-4 py-8 bg-[url('/images/team/aboutcover 1.svg')] min-h-screen">
-            {/* Carousel Section with Side Arrows */}
+        <div className="relative w-full max-w-9xl mx-auto mt-12 py-8 bg-transparent min-h-screen">
             <div className="relative flex items-center justify-center mb-12">
                  {/* Cards Container */}
-                <div className="relative h-[400px] md:h-[500px] flex items-center justify-center">
+                <div className="relative h-[400px] md:h-[500px] top-20 flex items-center justify-center">
                     {teamMembers.map((member, index) => {
-                        const position = getCardPosition(index)
-                        const isActive = position === "center"
-
+                        const position = getCardPosition(index);
+                        const isActive = position === "center";
+                        let positionClass = "";
+                        if (position === "center") {
+                            positionClass = "z-10 scale-100 opacity-100 translate-x-0";
+                        } else if (position === "left") {
+                            positionClass = "z-5 scale-90 opacity-80 -translate-x-72 md:-translate-x-[28rem]";
+                        } else if (position === "left2") {
+                            positionClass = "z-4 scale-75 opacity-60 -translate-x-[22rem] md:-translate-x-[40rem]";
+                        } else if (position === "right") {
+                            positionClass = "z-5 scale-90 opacity-80 translate-x-72 md:translate-x-[28rem]";
+                        } else if (position === "right2") {
+                            positionClass = "z-4 scale-75 opacity-60 translate-x-[22rem] md:translate-x-[40rem]";
+                        } else {
+                            positionClass = "z-0 scale-50 opacity-0";
+                        }
                         return (
                             <div
                                 key={member.id}
-                                className={`absolute transition-all duration-500 ease-in-out cursor-pointer ${
-                                    position === "center"
-                                        ? "z-10 scale-100 opacity-100 translate-x-0"
-                                        : position === "left"
-                                            ? "z-5 scale-75 opacity-60 -translate-x-64 md:-translate-x-80"
-                                            : position === "right"
-                                                ? "z-5 scale-75 opacity-60 translate-x-64 md:translate-x-80"
-                                                : "z-0 scale-50 opacity-0"
-                                } ${isAnimating ? "pointer-events-none" : ""}`}
+                                className={`absolute transition-all duration-500 ease-in-out cursor-pointer ${positionClass} ${isAnimating ? "pointer-events-none" : ""}`}
                                 onClick={() => !isActive && goToSlide(index)}
                             >
                                 {/* Card */}
@@ -159,7 +170,7 @@ export default function TeamCarousel() {
                                     {/* Image Container with Gradient Background */}
                                     <div className="relative w-64 h-80 md:w-80 md:h-96 rounded-2xl overflow-hidden">
                                         {/* Gradient Background */}
-                                        <div className="absolute inset-0 bg-gradient-to-br from-black via-orange-500 to-black opacity-90" />
+                                        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#eb2f01] to-black opacity-90" />
 
                                         {/* Profile Image */}
                                         <Image
@@ -167,7 +178,7 @@ export default function TeamCarousel() {
                                             alt={member.name}
                                             height={100}
                                             width={100}
-                                            className={`absolute inset-0 w-full h-full object-cover group-hover:mix-blend-multiply transition-transform duration-700 group-hover:scale-105 ${isActive? 'opacity-100': 'opacity-50'}`}
+                                            className={`absolute inset-0 w-full h-full object-cover group-hover:mix-blend-multiply transition-transform duration-700 group-hover:scale-105 ${isActive? 'opacity-100': 'opacity-85'}`}
                                         />
 
                                         {/* Overlay for better contrast */}
@@ -176,15 +187,15 @@ export default function TeamCarousel() {
 
                                     {/* Animated Border */}
                                     <div
-                                        className={`absolute inset-0 rounded-2xl transition-all duration-300 ${
+                                        className={`absolute inset-0 rounded-sm transition-all duration-300 ${
                                             isActive
-                                                ? "ring-2 ring-orange-400 ring-opacity-60 shadow-2xl shadow-orange-500/20"
+                                                ? "ring-1 ring-[#eb2f01] ring-opacity-60 shadow-2xl shadow-orange-500/20"
                                                 : "ring-1 ring-white/10"
                                         }`}
                                     />
                                 </div>
                             </div>
-                        )
+                        );
                     })}
                 </div>
 
@@ -192,7 +203,7 @@ export default function TeamCarousel() {
             </div>
 
             {/* Person Details Section Below Carousel */}
-            <div className="text-center text-white px-4">
+            <div className="text-center bg-black text-white">
                 <div className="max-w-2xl mx-auto">
                     <div className="flex w-full items-center justify-center gap-7 mb-2">
                         <button

@@ -3,6 +3,7 @@ import { EconomicRailSection } from "@/components/roadmap/EconomicRailSection";
 import EverythingRunsThrough from "@/components/roadmap/EverythingRunsThrough";
 import { ProblemSolutionSection } from "@/components/roadmap/ProblemSolutionSection";
 import { RoadmapSection } from "@/components/roadmap/RoadmapSection";
+import RoadmapSection2 from "@/components/roadmap/RoadmapSection2";
 import { WhyItMattersSection } from "@/components/roadmap/WhyItMattersSection";
 import { WhyNowSection } from "@/components/roadmap/WhyNowSection";
 import React from "react";
@@ -14,7 +15,8 @@ const RoadMap = () => {
       <CallToActionSection />
       <ProblemSolutionSection />
       <EverythingRunsThrough />
-      <RoadmapSection/>
+      <RoadmapSection2/>
+      {/* <RoadmapSection/> */}
       <WhyNowSection />
       <WhyItMattersSection />
     </div>

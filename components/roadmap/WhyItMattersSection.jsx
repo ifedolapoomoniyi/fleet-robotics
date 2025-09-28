@@ -40,7 +40,7 @@ export const WhyItMattersSection = () => {
 
       {/* Right-side big image */}
       <img
-        className="absolute top-0  right-0 w-1/2 h-full object-cover hidden lg:block"
+        className="absolute top-0 z-10  right-0 w-1/2 h-full object-cover hidden lg:block"
         src="/images/roboruk-1.svg"
         alt="Roboruk"
       />

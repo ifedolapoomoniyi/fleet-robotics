@@ -18,6 +18,15 @@ const allianceNo2 = localFont({
   ],
   variable: "--font-allianceNo2",
 });
+
+const allianceNo2Light = localFont({
+  src: "../public/fonts/Alliance-No2-Regular/AllianceNo1-Light.ttf",
+  weight: "300", // mark it as light
+  style: "normal",
+  variable: "--font-allianceNo2Light",
+});
+
+
 const chakraPetch = localFont({
   src: [
     {
@@ -31,7 +40,7 @@ const chakraPetch = localFont({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${chakraPetch.variable} ${allianceNo2.variable}`}>
+    <html lang="en" className={`${chakraPetch.variable} ${allianceNo2.variable} ${allianceNo2Light.variable}`}>
       <body>
         <Navbar />
         {children}

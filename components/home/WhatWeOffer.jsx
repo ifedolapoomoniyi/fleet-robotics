@@ -78,7 +78,7 @@ const features = [
 
 const WhatWeOffer = () => {
   return (
-    <div className="min-h-[90vh] bg-[url('/images/what-we-do-bg.svg')] bg-cover bg-bottom mx-5 lg:mx-[80px] my-[100px]">
+    <div className="min-h-[90vh] bg-[url('/images/what-we-do-bg.svg')] bg-cover bg-bottom px-5 lg:mx-[80px] my-[100px]">
         <div className="flex flex-col items-center justify-center text-white mb-14">
             <div className="uppercase opacity-70 text-lg ">What we Offer</div>
             <h2 className="pb-5 text-6xl font-medium tracking-tight">Robot Services On-Demand</h2>

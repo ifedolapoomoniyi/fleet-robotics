@@ -22,7 +22,7 @@ const Footer = () => {
           width={36}
           height={36}
         />
-        <h2 className="whitespace-break-spaces text-2xl flex flex-col">fleet <span>robotics™</span></h2>
+        <h2 className="whitespace-break-spaces leading-5 text-2xl flex flex-col">fleet <br/>robotics™</h2>
       </div>
 
       {/* links */}
@@ -32,7 +32,7 @@ const Footer = () => {
           <Link
             href={route.link}
             key={key}
-            className="uppercase font-medium px-2 hover:opacity-75 duration-300 transition-all"
+            className="uppercase font-chakrapetch font-medium px-2 hover:opacity-75 duration-300 transition-all"
           >
             {route.label}
           </Link>

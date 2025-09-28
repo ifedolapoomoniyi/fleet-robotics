@@ -1,347 +1,154 @@
-"use client"
+"use client";
+import React, { useState } from "react";
+import { Button } from "../../../../components/ui/button";
+import { Menu, X } from "lucide-react";
 
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Zap } from 'lucide-react';
+export const CallToActionSection = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-const FuturisticNavbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Roadmap', href: 'roadmap' }
+  const navigationItems = [
+    { label: "ABOUT", isActive: false },
+    { label: "TEAM", isActive: false },
+    { label: "ROADMAP", isActive: true },
+    { label: "TECHNOLOGY", isActive: false },
   ];
 
-  // Removed entry animation variants
-
-  const mobileMenuVariants = {
-    closed: {
-      x: '100%',
-      transition: {
-        duration: 0.4,
-        ease: 'easeInOut'
-      }
-    },
-    open: {
-      x: '0%',
-      transition: {
-        duration: 0.4,
-        ease: 'easeInOut'
-      }
-    }
-  };
-
-  const overlayVariants = {
-    closed: {
-      opacity: 0,
-      transition: { duration: 0.3 }
-    },
-    open: {
-      opacity: 1,
-      transition: { duration: 0.3 }
-    }
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
-    <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        scrolled 
-          ? 'bg-black/20 backdrop-blur-xl border-b border-cyan-500/20 shadow-lg shadow-cyan-500/5' 
-          : 'bg-transparent'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 lg:h-20">
-          
-          {/* Left Navigation Links - Desktop */}
-          <div className="hidden lg:flex items-center space-x-8">
-            {navLinks.map((link, index) => (
-              <motion.a
-                key={link.name}
-                href={link.href}
-                className="relative text-white/80 hover:text-cyan-400 transition-colors duration-300 font-medium"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span className="relative z-10">{link.name}</span>
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-lg"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileHover={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.2 }}
-                />
-                <motion.div
-                  className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400"
-                  initial={{ scaleX: 0 }}
-                  whileHover={{ scaleX: 1 }}
-                  transition={{ duration: 0.3 }}
-                />
-              </motion.a>
-            ))}
-          </div>
+    <header className="fixed top-0 left-0 right-0 w-full h-[84px] bg-[#000000cc] border-b-[1.33px] border-[#1a1a1a] backdrop-blur backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(8px)_brightness(100%)] z-50">
+      {/* Decorative Lines - Desktop Only */}
+      <img
+        className="hidden lg:block fixed top-0 left-0 w-[71px] z-[51]"
+        alt="Loadbar left"
+        src="/loadbar-left.svg"
+      />
+      <img
+        className="hidden lg:block fixed top-0 right-0 w-[72px] z-[51]"
+        alt="Loadbar right"
+        src="/loadbar-left-1.svg"
+      />
 
-          {/* Center Logo */}
-          <motion.div
-            className="flex items-center"
-            whileHover={{ scale: 1.1, rotate: 5 }}
-            whileTap={{ scale: 0.95 }}
+      <div className="relative w-full h-full max-w-[1920px] mx-auto">
+        <div className="flex items-center justify-between h-full px-4 sm:px-6 md:px-8 lg:px-[98px]">
+          {/* Mobile Menu Button */}
+          <button
+            onClick={toggleMobileMenu}
+            className="lg:hidden flex items-center justify-center w-10 h-10 text-white hover:bg-white/10 rounded-md transition-colors"
+            aria-label="Toggle mobile menu"
           >
-            <div className="relative">
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full blur-xl opacity-50"
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.5, 0.8, 0.5]
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-              <div className="relative bg-gradient-to-r from-cyan-500 to-purple-500 p-3 rounded-xl">
-                <Zap className="w-8 h-8 text-white" />
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
+          </button>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-4 xl:gap-6">
+            {navigationItems.map((item, index) => (
+              <div
+                key={index}
+                className="inline-flex items-center gap-1.5 relative flex-[0_0_auto]"
+              >
+                {item.isActive ? (
+                  <img
+                    className="relative flex-[0_0_auto]"
+                    alt="Frame"
+                    src="/frame-2147258686.svg"
+                  />
+                ) : (
+                  <div className="relative w-[8.24px] h-[13.39px]">
+                    <div className="absolute top-px left-0 w-[3px] h-[3px] bg-[#ffffff36]" />
+                    <div className="absolute top-2.5 left-0 w-[3px] h-[3px] bg-[#ffffff36]" />
+                    <div className="absolute top-[5px] left-[5px] w-[3px] h-[3px] bg-[#ffffff36]" />
+                  </div>
+                )}
+                <div className="relative w-fit mt-[-1.33px] [font-family:'Chakra_Petch',Helvetica] font-medium text-white text-sm xl:text-[17.3px] tracking-[0.35px] leading-[normal]">
+                  {item.label}
+                </div>
+              </div>
+            ))}
+          </nav>
+
+          {/* Logo - Always centered */}
+          <img
+            className="absolute top-[22px] left-1/2 transform -translate-x-1/2 w-[80px] h-6 sm:w-[100px] sm:h-7 lg:w-[119px] lg:h-9"
+            alt="Logo"
+            src="/logo-1.png"
+          />
+
+          {/* Desktop CTA Buttons */}
+          <div className="hidden sm:flex items-center gap-2 lg:gap-[5.33px]">
+            {/* <Button className="inline-flex items-center justify-center gap-[10.67px] px-2 py-2 sm:px-3 sm:py-2.5 lg:px-[13.33px] lg:py-[10.67px] bg-[#ff3604] rounded-[2.67px] h-auto hover:bg-[#ff3604]/90 text-xs sm:text-sm lg:text-[18.7px]">
+              <div className="relative w-fit mt-[-1.33px] [font-family:'Alliance_No.2-Medium',Helvetica] font-medium text-white tracking-[-0.56px] leading-[normal]">
+                <span className="hidden sm:inline">Hire Robot Now</span>
+                <span className="sm:hidden">Hire Robot</span>
+              </div>
+            </Button> */}
+
+            <div className="relative w-8 h-8 sm:w-10 sm:h-10 lg:w-[45.33px] lg:h-11 bg-white rounded-[2.67px] overflow-hidden">
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[8px] h-[12px] sm:w-[10px] sm:h-[15px] lg:w-[11px] lg:h-[17px] flex flex-col gap-[2px] lg:gap-[2.7px]">
+                <div className="ml-0 w-1 h-1 mt-0 bg-[#ff3604]" />
+                <div className="ml-[5px] sm:ml-[6px] lg:ml-[6.7px] w-1 h-1 bg-[#ff3604]" />
+                <div className="ml-0 w-1 h-1 bg-[#ff3604]" />
               </div>
             </div>
-            <motion.span
-              className="ml-3 text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent"
-            >
-              NEXUS
-            </motion.span>
-          </motion.div>
-
-          {/* Right CTA Button - Desktop */}
-          <div className="hidden lg:block">
-            <motion.button
-              className="relative px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-full overflow-hidden group"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500"
-                initial={{ x: '100%' }}
-                whileHover={{ x: '0%' }}
-                transition={{ duration: 0.3 }}
-              />
-              <span className="relative z-10">Get Started</span>
-              <motion.div
-                className="absolute inset-0 bg-white/20"
-                initial={{ scale: 0, borderRadius: '50%' }}
-                whileHover={{ scale: 1.5, borderRadius: '0%' }}
-                transition={{ duration: 0.4 }}
-              />
-            </motion.button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <motion.button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden text-white/80 hover:text-cyan-400 transition-colors duration-300"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <AnimatePresence mode="wait">
-              {isOpen ? (
-                <motion.div
-                  key="close"
-                  initial={{ rotate: -90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: 90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <X className="w-6 h-6" />
-                </motion.div>
-              ) : (
-                <motion.div
-                  key="menu"
-                  initial={{ rotate: 90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: -90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Menu className="w-6 h-6" />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.button>
+          {/* Mobile CTA Button */}
+          <div className="sm:hidden">
+            <Button className="inline-flex items-center justify-center px-3 py-2 bg-[#ff3604] rounded-[2.67px] h-auto hover:bg-[#ff3604]/90 text-xs">
+              <div className="relative w-fit [font-family:'Alliance_No.2-Medium',Helvetica] font-medium text-white tracking-[-0.56px] leading-[normal]">
+                Hire
+              </div>
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Menu Overlay */}
-        <AnimatePresence>
-          {isOpen && (
-            <>
-              {/* Backdrop */}
-              <motion.div
-                variants={overlayVariants}
-                initial="closed"
-                animate="open"
-                exit="closed"
-                className="fixed inset-0 bg-black/50 backdrop-blur-sm lg:hidden"
-                onClick={() => setIsOpen(false)}
-              />
-              
-              {/* Side Menu */}
-              <motion.div
-                variants={mobileMenuVariants}
-                initial="closed"
-                animate="open"
-                exit="closed"
-                className="fixed right-0 top-0 h-full w-80 max-w-[80vw] bg-gradient-to-br from-black via-gray-900 to-black border-l border-cyan-500/30 lg:hidden"
-              >
-                {/* Menu Header */}
-                <div className="flex items-center justify-between p-6 border-b border-cyan-500/20">
-                  <div className="flex items-center">
-                    <div className="relative">
-                      <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full blur-lg opacity-50"
-                        animate={{
-                          scale: [1, 1.2, 1],
-                          opacity: [0.5, 0.8, 0.5]
-                        }}
-                        transition={{
-                          duration: 2,
-                          repeat: Infinity,
-                          ease: "easeInOut"
-                        }}
-                      />
-                      <div className="relative bg-gradient-to-r from-cyan-500 to-purple-500 p-2 rounded-lg">
-                        <Zap className="w-5 h-5 text-white" />
-                      </div>
+        {isMobileMenuOpen && (
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-[#000000f5] backdrop-blur-md border-b border-[#1a1a1a] z-40">
+            <nav className="flex flex-col py-4">
+              {navigationItems.map((item, index) => (
+                <button
+                  key={index}
+                  className="flex items-center gap-3 px-6 py-4 hover:bg-white/5 transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.isActive ? (
+                    <img
+                      className="w-[8.24px] h-[13.39px]"
+                      alt="Frame"
+                      src="/frame-2147258686.svg"
+                    />
+                  ) : (
+                    <div className="relative w-[8.24px] h-[13.39px]">
+                      <div className="absolute top-px left-0 w-[3px] h-[3px] bg-[#ffffff36]" />
+                      <div className="absolute top-2.5 left-0 w-[3px] h-[3px] bg-[#ffffff36]" />
+                      <div className="absolute top-[5px] left-[5px] w-[3px] h-[3px] bg-[#ffffff36]" />
                     </div>
-                    <span className="ml-3 text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                      NEXUS
-                    </span>
+                  )}
+                  <div className="[font-family:'Chakra_Petch',Helvetica] font-medium text-white text-lg tracking-[0.35px] leading-[normal]">
+                    {item.label}
                   </div>
-                  
-                  <motion.button
-                    onClick={() => setIsOpen(false)}
-                    className="text-white/80 hover:text-cyan-400 transition-colors duration-300"
-                    whileHover={{ scale: 1.1, rotate: 90 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <X className="w-6 h-6" />
-                  </motion.button>
-                </div>
-
-                {/* Menu Items */}
-                <div className="p-6 space-y-4">
-                  {navLinks.map((link, index) => (
-                    <motion.a
-                      key={link.name}
-                      href={link.href}
-                      className="block relative group"
-                      onClick={() => setIsOpen(false)}
-                      initial={{ opacity: 0, x: 50 }}
-                      animate={{ 
-                        opacity: 1, 
-                        x: 0,
-                        transition: { delay: 0.1 + index * 0.1 }
-                      }}
-                      whileHover={{ x: 10 }}
-                    >
-                      <div className="flex items-center py-3 px-4 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-500/40 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-cyan-500/10 group-hover:to-purple-500/10">
-                        <motion.div
-                          className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full mr-4"
-                          animate={{ 
-                            scale: [1, 1.3, 1],
-                            opacity: [0.6, 1, 0.6]
-                          }}
-                          transition={{ 
-                            duration: 2, 
-                            repeat: Infinity, 
-                            delay: index * 0.3 
-                          }}
-                        />
-                        <span className="text-white/80 group-hover:text-white font-medium">
-                          {link.name}
-                        </span>
-                        <motion.div
-                          className="ml-auto w-1 h-1 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100"
-                          initial={{ scale: 0 }}
-                          whileHover={{ scale: 1 }}
-                          transition={{ duration: 0.2 }}
-                        />
-                      </div>
-                    </motion.a>
-                  ))}
-                  
-                  {/* CTA Button */}
-                  <motion.div
-                    className="pt-6"
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 }}
-                  >
-                    <motion.button
-                      className="w-full relative px-6 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-xl overflow-hidden group"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500"
-                        initial={{ x: '100%' }}
-                        whileHover={{ x: '0%' }}
-                        transition={{ duration: 0.3 }}
-                      />
-                      <span className="relative z-10 flex items-center justify-center">
-                        Get Started
-                        <motion.div
-                          className="ml-2 w-4 h-4"
-                          animate={{ x: [0, 5, 0] }}
-                          transition={{ duration: 1.5, repeat: Infinity }}
-                        >
-                          →
-                        </motion.div>
-                      </span>
-                    </motion.button>
-                  </motion.div>
-
-                  {/* Decorative Elements */}
-                  <div className="pt-6 space-y-3">
-                    {[...Array(3)].map((_, i) => (
-                      <motion.div
-                        key={i}
-                        className="flex items-center space-x-3"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 0.3, scale: 1 }}
-                        transition={{ delay: 0.7 + i * 0.1 }}
-                      >
-                        <motion.div
-                          className="w-1 h-1 bg-cyan-400 rounded-full"
-                          animate={{ 
-                            scale: [1, 1.5, 1],
-                            opacity: [0.3, 0.8, 0.3]
-                          }}
-                          transition={{ 
-                            duration: 2, 
-                            repeat: Infinity,
-                            delay: i * 0.5
-                          }}
-                        />
-                        <div className="flex-1 h-px bg-gradient-to-r from-cyan-500/20 to-transparent" />
-                      </motion.div>
-                    ))}
+                </button>
+              ))}
+              
+              {/* Mobile Menu CTA */}
+              <div className="px-6 pt-4 border-t border-[#1a1a1a] mt-4">
+                <Button className="w-full inline-flex items-center justify-center gap-[10.67px] px-4 py-3 bg-[#ff3604] rounded-[2.67px] h-auto hover:bg-[#ff3604]/90">
+                  <div className="relative w-fit [font-family:'Alliance_No.2-Medium',Helvetica] font-medium text-white text-base tracking-[-0.56px] leading-[normal]">
+                    Hire Robot Now
                   </div>
-                </div>
-              </motion.div>
-            </>
-          )}
-        </AnimatePresence>
+                </Button>
+              </div>
+            </nav>
+          </div>
+        )}
       </div>
-    </nav>
+    </header>
   );
 };
-
-export default FuturisticNavbar;

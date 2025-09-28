@@ -1,6 +1,6 @@
-import Navbar from "@/components/Navbar";
 import "./globals.css";
 import Footer from "@/components/Footer";
+import { Navbar } from "@/components/Navbar";
 import localFont from "next/font/local";
 
 export const metadata = {
@@ -26,7 +26,6 @@ const allianceNo2Light = localFont({
   variable: "--font-allianceNo2Light",
 });
 
-
 const chakraPetch = localFont({
   src: [
     {
@@ -40,10 +39,18 @@ const chakraPetch = localFont({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${chakraPetch.variable} ${allianceNo2.variable} ${allianceNo2Light.variable}`}>
+    <html
+      lang="en"
+      className={`${chakraPetch.variable} ${allianceNo2.variable} ${allianceNo2Light.variable}`}
+    >
       <body>
         <Navbar />
-        {children}
+        <main
+          className="pt-[84px] md:pt-[84px] lg:pt-[84px] 
+                       max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8 lg:px-[98px]"
+        >
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

@@ -45,14 +45,13 @@ export default function RootLayout({ children }) {
 			className={`${chakraPetch.variable} ${allianceNo2.variable} ${allianceNo2Light.variable} text-white`}
 		>
 			<body className="font-allianceNo2">
-				<Navbar />
-				<main
-					className="pt-[84px] md:pt-[84px] lg:pt-[84px] 
-                       max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8"
-				>
-					<SmoothScrollWrapper>{children}</SmoothScrollWrapper>
-				</main>
-				<Footer />
+				<SmoothScrollWrapper>
+					<Navbar />
+					<main className="pt-[84px] md:pt-[84px] lg:pt-[84px] max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8">
+						{children}
+					</main>
+					<Footer />
+				</SmoothScrollWrapper>
 			</body>
 		</html>
 	);

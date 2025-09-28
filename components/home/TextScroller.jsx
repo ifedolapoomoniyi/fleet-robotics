@@ -20,8 +20,8 @@ const VerticalTextScroller = () => {
   }, [texts.length]);
 
   return (
-    <div className="flex items-center">
-      <div className="text-center w-54 px-5">
+    <div className="items-center inline-flex">
+      <div className="w-43 lg:w-57 sm:pl-2 lg:pl-3">
         {/* Text container with fixed height to prevent layout shift */}
         <div className="relative h-20 overflow-hidden">
           {texts.map((text, index) => (
@@ -31,8 +31,8 @@ const VerticalTextScroller = () => {
                 index === currentIndex
                   ? "opacity-100 transform translate-y-0"
                   : index === (currentIndex - 1 + texts.length) % texts.length
-                  ? "opacity-0 transform -translate-y-full"
-                  : "opacity-0 transform translate-y-full"
+                  ? "opacity-20 transform -translate-y-full"
+                  : "opacity-20 transform translate-y-full"
               }`}
             >
               <h1 className="text-white">{text}</h1>

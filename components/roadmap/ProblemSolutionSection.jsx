@@ -41,7 +41,7 @@ export const ProblemSolutionSection = () => {
         {/* Left Problem Column */}
         <div className="relative  bg-black lg:border-r border-[#1a1a1a] flex flex-col overflow-hidden">
           {/* MASK DIV: hides image until it slides out */}
-          <div className="absolute top-[90px] right-0 w-[430px] h-[663px] overflow-hidden">
+          <div className="absolute top-[90px] right-0 w-[430px] h-[663px] overflow-hidden hidden md:flex">
             <motion.img
               alt="Dark canister"
               src="/images/untitled-2-1.png"
@@ -78,7 +78,7 @@ export const ProblemSolutionSection = () => {
         {/* Right Solution Column */}
         <div className="relative flex flex-col overflow-hidden">
           {/* MASK DIV for right image */}
-          <div className="absolute top-[90px] left-0 w-[430px] h-[666px] overflow-hidden">
+          <div className="hidden md:flex absolute top-[90px] left-0 w-[430px] h-[666px] overflow-hidden">
             <motion.img
               alt="Light canister"
               src="/images/untitled-2.png"
@@ -93,7 +93,7 @@ export const ProblemSolutionSection = () => {
 
           <div className="relative z-10 flex items-center gap-2 top-4 md:top-8 lg:top-[652px] left-4 md:left-8 lg:left-[53px] mt-[-40px]">
             <DotPattern color="bg-[#ff3604]" />
-            <h2 className="[font-family:'Chakra_Petch',Helvetica] font-normal text-white text-lg md:text-xl lg:text-[26.7px] tracking-[-0.80px]">
+            <h2 className="font-chakrapetch font-normal text-white text-lg md:text-xl lg:text-[26.7px] tracking-[-0.80px]">
               The Fleet Solution
             </h2>
           </div>
@@ -102,10 +102,10 @@ export const ProblemSolutionSection = () => {
             {solutionItems.map((item, index) => (
               <Card key={index} className={`${item.bgColor} border-none rounded-none`}>
                 <CardContent className="flex flex-col lg:flex-row lg:h-[86.67px] items-start lg:items-center gap-2 lg:gap-4 px-4 md:px-8 lg:px-[53.33px] py-6 md:py-8">
-                  <h3 className="[font-family:'Chakra_Petch',Helvetica] font-semibold text-white text-lg md:text-xl lg:text-[26.7px] tracking-[-1.07px] leading-tight lg:leading-[39.0px] lg:whitespace-nowrap">
+                  <h3 className="font-chakrapetch font-semibold text-white text-lg md:text-xl lg:text-[26.7px] tracking-[-1.07px] leading-tight lg:leading-[39.0px] lg:whitespace-nowrap">
                     {item.title}
                   </h3>
-                  <p className="opacity-70 [font-family:'Alliance_No.2-Regular',Helvetica] font-normal text-white text-sm md:text-base lg:text-[18.7px] tracking-[-0.56px] leading-[normal]">
+                  <p className="opacity-75 font-normal text-white text-sm md:text-base lg:text-[18.7px] tracking-[-0.56px] leading-[normal]">
                     {item.description}
                   </p>
                 </CardContent>

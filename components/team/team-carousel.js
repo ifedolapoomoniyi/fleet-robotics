@@ -1,285 +1,291 @@
-"use client"
+"use client";
 
-import React, { useState, useEffect } from "react"
-import Image from "next/image"
-import {FaDiscord, FaLinkedin} from "react-icons/fa";
-import {FaSquareXTwitter} from "react-icons/fa6";
-
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import { FaDiscord, FaLinkedin } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
 
 const teamMembers = [
-    {
-        id: 1,
-        name: "Sarah Johnson",
-        title: "CTO & Co-founder",
-        description:
-            "Sarah Johnson is the CTO and Co-founder at First Robotics. She is responsible for the overall direction of the company and the development of its core technology. Sarah is a passionate advocate for the use of robotics to improve people's lives.",
-        image: "/images/team/Rectangle 2.svg",
-        social: {
-            linkedin: "#",
-            website: "#",
-            twitter: "#",
-        },
-    },
-    {
-        id: 2,
-        name: "Adam Consuli",
-        title: "CEO & Engineer",
-        description:
-            "Adam Consuli is the CEO and Engineer at First Robotics. He is responsible for the overall direction of the company and the development of its core technology. Adam is a passionate advocate for the use of robotics to improve people's lives.",
-        image: "/images/team/Rectangle 3.svg",
-        social: {
-            linkedin: "#",
-            website: "#",
-            twitter: "#",
-        },
-    },
-    {
-        id: 3,
-        name: "Michael Chen",
-        title: "Lead Developer",
-        description:
-            "Michael Chen is the Lead Developer at First Robotics. He is responsible for the overall direction of the company and the development of its core technology. Michael is a passionate advocate for the use of robotics to improve people's lives.",
-        image: "/images/team/Rectangle 1.svg",
-        social: {
-            linkedin: "#",
-            website: "#",
-            twitter: "#",
-        },
-    },
-    {
-        id: 4,
-        name: "Emily Rodriguez",
-        title: "Lead Designer",
-        description:
-            "Emily Rodriguez is the Lead Designer at First Robotics. She is responsible for the overall direction of the company and the development of its core technology. Emily is a passionate advocate for the use of robotics to improve people's lives.",
-        image: "/images/team/Rectangle 3.svg",
-        social: {
-            linkedin: "#",
-            website: "#",
-            twitter: "#",
-        },
-    },
-    {
-        id: 5,
-        name: "David Park",
-        title: "Product Manager",
-        description:
-            "David Park is the Product Manager at First Robotics. He is responsible for the overall direction of the company and the development of its core technology. David is a passionate advocate for the use of robotics to improve people's lives.",
-        image: "/images/team/Rectangle 2.svg",
-        social: {
-            linkedin: "#",
-            website: "#",
-            twitter: "#",
-        },
-    },
-    {
-        id: 6,
-        name: "Lisa Wang",
-        title: "AI Specialist",
-        description:
-            "Lisa Wang is the AI Specialist at First Robotics. She is responsible for the overall direction of the company and the development of its core technology. Lisa is a passionate advocate for the use of robotics to improve people's lives.",
-        image: "/images/team/Rectangle 1.svg",
-        social: {
-            linkedin: "#",
-            website: "#",
-            twitter: "#",
-        },
-    },
-]
+	{
+		id: 1,
+		name: "Adam Consuli",
+		title: "CEO & Engineer",
 
+		description:
+			"Sarah Johnson is the CTO and Co-founder at First Robotics. She is responsible for the overall direction of the company and the development of its core technology. Sarah is a passionate advocate for the use of robotics to improve people's lives.",
+		image: "/images/team/Rectangle 2.svg",
+		social: {
+			linkedin: "#",
+			website: "#",
+			twitter: "#",
+		},
+	},
+	{
+		id: 2,
+		name: "Sarah Johnson",
+		title: "CTO & Co-founder",
+		description:
+			"Adam Consuli is the CEO and Engineer at First Robotics. He is responsible for the overall direction of the company and the development of its core technology. Adam is a passionate advocate for the use of robotics to improve people's lives.",
+		image: "/images/team/Rectangle 3.svg",
+		social: {
+			linkedin: "#",
+			website: "#",
+			twitter: "#",
+		},
+	},
+	{
+		id: 3,
+		name: "Michael Chen",
+		title: "Lead Developer",
+		description:
+			"Michael Chen is the Lead Developer at First Robotics. He is responsible for the overall direction of the company and the development of its core technology. Michael is a passionate advocate for the use of robotics to improve people's lives.",
+		image: "/images/team/Rectangle 1.svg",
+		social: {
+			linkedin: "#",
+			website: "#",
+			twitter: "#",
+		},
+	},
+	{
+		id: 4,
+		name: "Emily Rodriguez",
+		title: "Lead Designer",
+		description:
+			"Emily Rodriguez is the Lead Designer at First Robotics. She is responsible for the overall direction of the company and the development of its core technology. Emily is a passionate advocate for the use of robotics to improve people's lives.",
+		image: "/images/team/Rectangle 3.svg",
+		social: {
+			linkedin: "#",
+			website: "#",
+			twitter: "#",
+		},
+	},
+	{
+		id: 5,
+		name: "David Park",
+		title: "Product Manager",
+		description:
+			"David Park is the Product Manager at First Robotics. He is responsible for the overall direction of the company and the development of its core technology. David is a passionate advocate for the use of robotics to improve people's lives.",
+		image: "/images/team/Rectangle 2.svg",
+		social: {
+			linkedin: "#",
+			website: "#",
+			twitter: "#",
+		},
+	},
+	{
+		id: 6,
+		name: "Lisa Wang",
+		title: "AI Specialist",
+		description:
+			"Lisa Wang is the AI Specialist at First Robotics. She is responsible for the overall direction of the company and the development of its core technology. Lisa is a passionate advocate for the use of robotics to improve people's lives.",
+		image: "/images/team/Rectangle 1.svg",
+		social: {
+			linkedin: "#",
+			website: "#",
+			twitter: "#",
+		},
+	},
+];
 
 export default function TeamCarousel() {
-    const [currentIndex, setCurrentIndex] = useState(1) // Start with middle item
-    const [isAnimating, setIsAnimating] = useState(false)
+	const [currentIndex, setCurrentIndex] = useState(1); // Start with middle item
+	const [isAnimating, setIsAnimating] = useState(false);
 
-    const nextSlide = () => {
-        if (isAnimating) return
-        setIsAnimating(true)
-        setCurrentIndex((prev) => (prev + 1) % teamMembers.length)
-    }
+	const nextSlide = () => {
+		if (isAnimating) return;
+		setIsAnimating(true);
+		setCurrentIndex((prev) => (prev + 1) % teamMembers.length);
+	};
 
-    const prevSlide = () => {
-        if (isAnimating) return
-        setIsAnimating(true)
-        setCurrentIndex((prev) => (prev - 1 + teamMembers.length) % teamMembers.length)
-    }
+	const prevSlide = () => {
+		if (isAnimating) return;
+		setIsAnimating(true);
+		setCurrentIndex(
+			(prev) => (prev - 1 + teamMembers.length) % teamMembers.length
+		);
+	};
 
-    const goToSlide = (index) => {
-        if (isAnimating || index === currentIndex) return
-        setIsAnimating(true)
-        setCurrentIndex(index)
-    }
+	const goToSlide = (index) => {
+		if (isAnimating || index === currentIndex) return;
+		setIsAnimating(true);
+		setCurrentIndex(index);
+	};
 
-    useEffect(() => {
-        const timer = setTimeout(() => setIsAnimating(false), 500)
-        return () => clearTimeout(timer)
-    }, [currentIndex])
+	useEffect(() => {
+		const timer = setTimeout(() => setIsAnimating(false), 500);
+		return () => clearTimeout(timer);
+	}, [currentIndex]);
 
-    // Auto-play functionality
-    useEffect(() => {
-        const interval = setInterval(() => {
-            nextSlide()
-        }, 3000)
-        return () => clearInterval(interval)
-    }, [])
+	// Auto-play functionality
+	useEffect(() => {
+		const interval = setInterval(() => {
+			nextSlide();
+		}, 5000);
+		return () => clearInterval(interval);
+	}, []);
 
-    const getCardPosition = (index) => {
-        const total = teamMembers.length;
-        let diff = index - currentIndex;
-        // Handle wrap-around for left/right positions
-        if (diff < -Math.floor(total / 2)) diff += total;
-        if (diff > Math.floor(total / 2)) diff -= total;
-        if (diff === 0) return "center";
-        if (diff === -1) return "left";
-        if (diff === -2) return "left2";
-        if (diff === 1) return "right";
-        if (diff === 2) return "right2";
-        return "hidden";
-    }
+	const getCardPosition = (index) => {
+		const total = teamMembers.length;
+		let diff = index - currentIndex;
+		// Handle wrap-around for left/right positions
+		if (diff < -Math.floor(total / 2)) diff += total;
+		if (diff > Math.floor(total / 2)) diff -= total;
+		if (diff === 0) return "center";
+		if (diff === -1) return "left";
+		if (diff === -2) return "left2";
+		if (diff === 1) return "right";
+		if (diff === 2) return "right2";
+		return "hidden";
+	};
 
-    return (
-        <div className="relative w-full max-w-9xl mx-auto mt-12 py-8 bg-transparent min-h-screen">
-            <div className="relative flex items-center justify-center mb-12">
-                 {/* Cards Container */}
-                <div className="relative h-[400px] md:h-[500px] top-20 flex items-center justify-center">
-                    {teamMembers.map((member, index) => {
-                        const position = getCardPosition(index);
-                        const isActive = position === "center";
-                        let positionClass = "";
-                        if (position === "center") {
-                            positionClass = "z-10 scale-100 opacity-100 translate-x-0";
-                        } else if (position === "left") {
-                            positionClass = "z-5 scale-90 opacity-80 -translate-x-72 md:-translate-x-[28rem]";
-                        } else if (position === "left2") {
-                            positionClass = "z-4 scale-75 opacity-60 -translate-x-[22rem] md:-translate-x-[40rem]";
-                        } else if (position === "right") {
-                            positionClass = "z-5 scale-90 opacity-80 translate-x-72 md:translate-x-[28rem]";
-                        } else if (position === "right2") {
-                            positionClass = "z-4 scale-75 opacity-60 translate-x-[22rem] md:translate-x-[40rem]";
-                        } else {
-                            positionClass = "z-0 scale-50 opacity-0";
-                        }
-                        return (
-                            <div
-                                key={member.id}
-                                className={`absolute transition-all duration-500 ease-in-out cursor-pointer ${positionClass} ${isAnimating ? "pointer-events-none" : ""}`}
-                                onClick={() => !isActive && goToSlide(index)}
-                            >
-                                {/* Card */}
-                                <div className="relative group">
-                                    {/* Image Container with Gradient Background */}
-                                    <div className="relative w-64 h-80 md:w-80 md:h-96 rounded-2xl overflow-hidden">
-                                        {/* Gradient Background */}
-                                        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#eb2f01] to-black opacity-95" />
+	return (
+		<div className="relative w-full max-w-9xl mx-auto mt-12 py-8 bg-transparent min-h-screen">
+			<div className="relative flex items-center justify-center mb-12">
+				{/* Cards Container */}
+				<div className="relative h-[500px] md:h-[550px] top-20 flex items-center justify-center">
+					{teamMembers.map((member, index) => {
+						const position = getCardPosition(index);
+						const isActive = position === "center";
+						let positionClass = "";
+						if (position === "center") {
+							positionClass =
+								"z-10 scale-120 opacity-100 translate-x-0";
+						} else if (position === "left") {
+							positionClass =
+								"z-5 scale-90 opacity-80 -translate-x-72 md:-translate-x-[28rem]";
+						} else if (position === "left2") {
+							positionClass =
+								"z-4 scale-75 opacity-60 -translate-x-[22rem] md:-translate-x-[40rem]";
+						} else if (position === "right") {
+							positionClass =
+								"z-5 scale-90 opacity-80 translate-x-72 md:translate-x-[28rem]";
+						} else if (position === "right2") {
+							positionClass =
+								"z-4 scale-75 opacity-60 translate-x-[22rem] md:translate-x-[40rem]";
+						} else {
+							positionClass = "z-0 scale-50 opacity-0";
+						}
+						return (
+							<div
+								key={member.id}
+								className={`absolute transition-all duration-1000 ease-in-out cursor-pointer ${positionClass} ${
+									isAnimating ? "pointer-events-none" : ""
+								}`}
+								onClick={() => !isActive && goToSlide(index)}
+							>
+								{/* Card */}
+								<div className="relative group">
+									{/* Image Container with Gradient Background */}
+									<div className="relative w-72 h-96 md:w-80 md:h-96 rounded overflow-hidden">
+										{/* Gradient Background */}
+										<div className="absolute inset-0 bg-gradient-to-br from-black via-[#eb2f01] to-black opacity-95" />
 
-                                        {/* Profile Image */}
-                                        <Image
-                                            src={member.image || "/placeholder.svg"}
-                                            alt={member.name}
-                                            height={100}
-                                            width={100}
-                                            className={`absolute inset-0 w-full h-full object-cover group-hover:mix-blend-multiply transition-transform duration-700 group-hover:scale-105 ${isActive? 'opacity-100': 'opacity-85'}`}
-                                        />
+										{/* Profile Image */}
+										<Image
+											src={
+												member.image ||
+												"/placeholder.svg"
+											}
+											alt={member.name}
+											height={150}
+											width={150}
+											className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${
+												isActive
+													? "h-[125%] opacity-100"
+													: "opacity-85"
+											}`}
+										/>
 
-                                        {/* Overlay for better contrast */}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                                    </div>
+										{/* Overlay for better contrast */}
+										<div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+									</div>
+									{/* darken non active  */}
+									{!isActive && (
+										<div className="absolute inset-0 bg-black/50" />
+									)}
+								</div>
+							</div>
+						);
+					})}
+				</div>
+			</div>
 
-                                    {/* Animated Border */}
-                                    <div
-                                        className={`absolute inset-0 rounded-sm transition-all duration-300 ${
-                                            isActive
-                                                ? "ring-1 ring-[#eb2f01] ring-opacity-60 shadow-2xl shadow-orange-500/20"
-                                                : "ring-1 ring-white/10"
-                                        }`}
-                                    />
-                                </div>
-                            </div>
-                        );
-                    })}
-                </div>
+			{/* Person Details Section Below Carousel */}
+			<div className="text-center bg-black text-white mt-10">
+				<div className="max-w-2xl mx-auto">
+					<div className="flex w-full items-center justify-center gap-7 mb-2">
+						<button
+							className="p-3 rounded-sm cursor-pointer bg-white/10 hover:bg-white/20 transition-colors text-white "
+							onClick={prevSlide}
+							disabled={isAnimating}
+							aria-label="Previous"
+						>
+							<Image
+								src="/images/technology/left-whir.svg"
+								alt="list-icon"
+								width={12}
+								height={12}
+							/>
+						</button>
 
+						<h2 className="text-3xl md:text-4xl font-bold transition-all duration-500 text-balance">
+							{teamMembers[currentIndex].name}
+						</h2>
 
-            </div>
+						<button
+							className="p-3 rounded-sm cursor-pointer bg-white/10 hover:bg-white/20 transition-colors text-white "
+							onClick={nextSlide}
+							disabled={isAnimating}
+							aria-label="Next"
+						>
+							<Image
+								src="/images/technology/right-whir.svg"
+								alt="list-icon"
+								width={12}
+								height={12}
+							/>
+						</button>
+					</div>
 
-            {/* Person Details Section Below Carousel */}
-            <div className="text-center bg-black text-white">
-                <div className="max-w-2xl mx-auto">
-                    <div className="flex w-full items-center justify-center gap-7 mb-2">
-                        <button
-                            className="p-3 rounded-sm cursor-pointer bg-white/10 hover:bg-white/20 transition-colors text-white "
-                            onClick={prevSlide}
-                            disabled={isAnimating}
-                            aria-label="Previous"
-                        >
-                            <Image
-                                src="/images/technology/left-whir.svg"
-                                alt="list-icon"
-                                width={12}
-                                height={12}
-                            />
-                        </button>
+					<p className="text-lg md:text-xl font-light text-white/60 mb-6 transition-all duration-500">
+						{teamMembers[currentIndex].title}
+					</p>
+					<p className="text-sm md:text-base text-gray-300/80 font-chakrapetch font-light leading-relaxed mb-8 transition-all duration-500 text-pretty max-w-xl mx-auto">
+						{teamMembers[currentIndex].description}
+					</p>
 
-
-
-                        <h2 className="text-3xl md:text-4xl font-bold transition-all duration-500 text-balance">
-                            {teamMembers[currentIndex].name}
-                        </h2>
-
-                        <button
-                            className="p-3 rounded-sm cursor-pointer bg-white/10 hover:bg-white/20 transition-colors text-white "
-                            onClick={nextSlide}
-                            disabled={isAnimating}
-                            aria-label="Next"
-                        >
-                            <Image
-                                src="/images/technology/right-whir.svg"
-                                alt="list-icon"
-                                width={12}
-                                height={12}
-                            />
-                        </button>
-                    </div>
-
-                    <p className="text-lg md:text-xl font-light text-white/60 mb-6 transition-all duration-500">
-                        {teamMembers[currentIndex].title}
-                    </p>
-                    <p className="text-sm md:text-base text-gray-300/80 font-chakrapetch font-light leading-relaxed mb-8 transition-all duration-500 text-pretty max-w-xl mx-auto">
-                        {teamMembers[currentIndex].description}
-                    </p>
-
-                    {/* Social Links */}
-                    <div className="flex justify-center space-x-4 mb-8">
-                        {teamMembers[currentIndex].social.linkedin && (
-                            <a
-                                href={teamMembers[currentIndex].social.linkedin}
-                                className="p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 hover:scale-110 hover:rotate-3"
-                                aria-label="LinkedIn"
-                            >
-                                <FaDiscord color='gray' />
-                            </a>
-                        )}
-                        {teamMembers[currentIndex].social.website && (
-                            <a
-                                href={teamMembers[currentIndex].social.website}
-                                className="p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 hover:scale-110 hover:rotate-3"
-                                aria-label="Website"
-                            >
-                                <FaLinkedin color='gray' />
-                            </a>
-                        )}
-                        {teamMembers[currentIndex].social.twitter && (
-                            <a
-                                href={teamMembers[currentIndex].social.twitter}
-                                className="p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 hover:scale-110 hover:rotate-3"
-                                aria-label="Twitter"
-                            >
-                                <FaSquareXTwitter color='gray' />
-                            </a>
-                        )}
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
+					{/* Social Links */}
+					<div className="flex justify-center space-x-4 mb-8">
+						{teamMembers[currentIndex].social.linkedin && (
+							<a
+								href={teamMembers[currentIndex].social.linkedin}
+								className="p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 hover:scale-110 hover:rotate-3"
+								aria-label="LinkedIn"
+							>
+								<FaDiscord color="gray" />
+							</a>
+						)}
+						{teamMembers[currentIndex].social.website && (
+							<a
+								href={teamMembers[currentIndex].social.website}
+								className="p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 hover:scale-110 hover:rotate-3"
+								aria-label="Website"
+							>
+								<FaLinkedin color="gray" />
+							</a>
+						)}
+						{teamMembers[currentIndex].social.twitter && (
+							<a
+								href={teamMembers[currentIndex].social.twitter}
+								className="p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 hover:scale-110 hover:rotate-3"
+								aria-label="Twitter"
+							>
+								<FaSquareXTwitter color="gray" />
+							</a>
+						)}
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 }

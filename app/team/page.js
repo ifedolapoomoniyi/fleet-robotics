@@ -5,7 +5,7 @@ import TeamCarousel from "@/components/team/team-carousel";
 
 const Page = () => {
     return (
-        <main className="overflow-hidden w-full flex flex-col relative min-h-screen text-white">
+        <main className="overflow-hidden w-full flex flex-col relative min-h-screen text-white mb-64">
             <section className='bg-linear-0 h-[100%] from-transparent via-[#eb2f01]/30 to-transparent relative'>
                 {/* Background Image Overlay */}
                 <div
@@ -35,6 +35,10 @@ const Page = () => {
                     </h1>
 
                     <TeamCarousel/>
+                </div>
+
+                <div>
+                    
                 </div>
             </section>
         </main>

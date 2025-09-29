@@ -91,7 +91,6 @@ const WhatWeOffer = () => {
           {features?.map((feature, key) =>(
             <FeatureCard description={feature.description} title1={feature.title1} title2={feature.title2} details={feature.details} key={key} index={key}/>
           ))}
-            <FeatureCard />
         </div>
     </div>
   )

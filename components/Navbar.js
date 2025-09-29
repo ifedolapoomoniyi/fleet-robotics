@@ -56,7 +56,7 @@ export const Navbar = () => {
               <Link
                 key={index}
                 href={item.href}
-                className="inline-flex items-center gap-1.5 relative flex-[0_0_auto]"
+                className={`inline-flex items-center gap-1.5 relative flex-[0_0_auto] ${pathname === item.href? "" : "opacity-65"}`}
               >
                 {pathname === item.href ? (
                   <img

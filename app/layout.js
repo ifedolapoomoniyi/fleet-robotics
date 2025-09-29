@@ -4,11 +4,6 @@ import { Navbar } from "@/components/Navbar";
 import localFont from "next/font/local";
 import SmoothScrollWrapper from "@/components/SmoothScrollWrapper";
 
-export const metadata = {
-	title: "Fleet Robotics",
-	description: "Decentralized robot marketplace",
-};
-
 const allianceNo2 = localFont({
 	src: [
 		{
@@ -22,7 +17,7 @@ const allianceNo2 = localFont({
 
 const allianceNo2Light = localFont({
 	src: "../public/fonts/Alliance-No2-Regular/AllianceNo1-Light.ttf",
-	weight: "300", // mark it as light
+	weight: "300",
 	style: "normal",
 	variable: "--font-allianceNo2Light",
 });
@@ -37,6 +32,39 @@ const chakraPetch = localFont({
 	],
 	variable: "--font-chakraPetch",
 });
+
+export const metadata = {
+	title: "Fleet Robotics",
+	description: "Decentralized robot marketplace",
+	icons: {
+		icon: [
+			{ url: "/favicon.ico" },
+			{ url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+			{ url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+		],
+		apple: [
+			{
+				url: "/apple-touch-icon.png",
+				sizes: "180x180",
+				type: "image/png",
+			},
+		],
+		other: [
+			{
+				rel: "android-chrome-192x192",
+				url: "/android-chrome-192x192.png",
+				sizes: "192x192",
+				type: "image/png",
+			},
+			{
+				rel: "android-chrome-512x512",
+				url: "/android-chrome-512x512.png",
+				sizes: "512x512",
+				type: "image/png",
+			},
+		],
+	},
+};
 
 export default function RootLayout({ children }) {
 	return (

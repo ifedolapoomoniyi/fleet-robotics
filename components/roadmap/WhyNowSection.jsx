@@ -3,26 +3,32 @@
 import React from "react";
 import { Card, CardContent } from "./ui/card";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 
 const progressData = [
   {
     percentage: "30",
     description: "Ship the first live demo and launch community channels.",
-    fillHeight: 130,
+    // fillHeight: 130,
+    fillHeight: { mobile: 130, desktop: 130 },
   },
   {
-    percentage: "7/20",
+    percentage: "70",
     description: "Onboard 10-20 external robots with Fleet IDs.",
-    fillHeight: 247,
+    // fillHeight: 200,
+    fillHeight: { mobile: 180, desktop: 270 },
   },
   {
     percentage: "10",
     description: "Use the demo as a wedge to kick off investor traction.",
-    fillHeight: 60,
+    // fillHeight: 50,
+    fillHeight: { mobile: 50, desktop: 50 },
   },
 ];
 
 export const WhyNowSection = () => {
+  const isDesktop = useMediaQuery({ minWidth: 768 });
+
   return (
     <section className="relative mt-40 w-full bg-black border-t border-b border-[#1a1a1a] py-16 md:py-24">
       {/* Background (desktop only) */}
@@ -76,7 +82,12 @@ export const WhyNowSection = () => {
                     {/* White fill animation */}
                     <motion.div
                       initial={{ height: 0 }}
-                      whileInView={{ height: item.fillHeight }}
+                      // whileInView={{ height: item.fillHeight.mobile }}
+                      whileInView={{
+                        height: isDesktop
+                          ? item.fillHeight.desktop
+                          : item.fillHeight.mobile,
+                      }}
                       transition={{ duration: 1.2, ease: "easeInOut" }}
                       viewport={{ once: true, amount: 0.4 }}
                       className="absolute bottom-0 left-0 w-full bg-white opacity-100" // 👈 always solid white now
@@ -95,11 +106,11 @@ export const WhyNowSection = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.8, delay: 0.3 }}
                       viewport={{ once: true, amount: 0.4 }}
-                      style={{ bottom: item.fillHeight + 14 }}
+                      style={{ bottom: isDesktop ? item.fillHeight.desktop + 14 : item.fillHeight.mobile + 14 }}
                       className="absolute left-1/2 transform -translate-x-1/2"
                     >
-                      <div className="[font-family:'Chakra_Petch',Helvetica] font-normal text-white text-lg md:text-xl lg:text-[18.7px] text-center tracking-[-0.56px] leading-[normal]">
-                        {index === 1 ? (
+                      <div className="font-allianceNo2 font-normal text-white text-lg md:text-xl lg:text-[18.7px] text-center tracking-[-0.56px] leading-[normal]">
+                        {index === 9 ? (
                           <>
                             <span className="text-white">
                               {item.percentage.split("/")[0]}/
@@ -109,12 +120,12 @@ export const WhyNowSection = () => {
                             </span>
                           </>
                         ) : (
-                          <>
+                          <span className="font-allianceNo2">
                             {item.percentage}
-                            <span className="opacity-50 text-xs md:text-sm lg:text-[10.7px] ml-1">
+                            <span className=" font-allianceNo2 opacity-50 text-xs md:text-sm lg:text-[10.7px] ml-1">
                               %
                             </span>
-                          </>
+                          </span>
                         )}
                       </div>
                     </motion.div>
@@ -122,7 +133,7 @@ export const WhyNowSection = () => {
                 </Card>
 
                 {/* Description under card */}
-                <p className="mt-4 font-normal text-white text-sm md:text-base lg:text-[18.7px] text-center">
+                <p className="[font-family:'Alliance_No.2-Regular',Helvetica] mt-4 font-normal text-white text-sm md:text-base lg:text-[18.7px] text-center">
                   {item.description}
                 </p>
               </div>

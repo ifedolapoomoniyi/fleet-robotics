@@ -35,18 +35,17 @@ export const ProblemSolutionSection = () => {
   return (
     <section ref={sectionRef} className="relative w-full h-auto overflow-hidden border-t border-b border-[#1a1a1a] mt-16 md:mt-24 lg:mt-[133.3px]">
       <div className="absolute top-0 right-0   w-1/2 h-full bg-[linear-gradient(180deg,rgba(0,0,0,0)_0%,rgba(121,24,0,1)_53%,rgba(241,48,0,1)_100%)]" />
-      <img className="absolute top-[300px] left-0 w-[1779px] h-[666px] pointer-events-none" alt="Group" src="/images/fleetgrid.png" />
+      <img className="absolute top-[300px] left-0 w-[1779px] h-[666px] hidden md:flex pointer-events-none" alt="Group" src="/images/fleetgrid.png" />
 
       <div className="grid  grid-cols-1 lg:grid-cols-2 h-full ">
         {/* Left Problem Column */}
         <div className="relative  bg-black lg:border-r border-[#1a1a1a] flex flex-col overflow-hidden">
-          {/* MASK DIV: hides image until it slides out */}
           <div className="absolute top-[90px] right-0 w-[430px] h-[663px] overflow-hidden hidden md:flex">
             <motion.img
               alt="Dark canister"
               src="/images/untitled-2-1.png"
               className="absolute w-[430px] h-[663px]"
-              initial={{ x: "100%" }} // fully hidden to the right
+              initial={{ x: "100%" }} 
               animate={controls}
               variants={{
                 visible: { x: 0, transition: { duration: 1, ease: "easeOut" } },
@@ -54,8 +53,8 @@ export const ProblemSolutionSection = () => {
             />
           </div>
 
-          <div className="relative z-10 flex flex-col mt-16 md:mt-20 lg:mt-[609px]">
-            <div className="flex ml-14 mb-8 items-center gap-2 left-4 md:left-8 lg:left-[53px]">
+          <div className="relative z-10 flex flex-col mt-16 md:mt-20 lg:mt-[606px]">
+            <div className="flex ml-4 md:ml-14 mb-4 md:mb-8 items-center gap-2 left-4 md:left-8 lg:left-[53px]">
               <DotPattern color="bg-[#7a7a7a]" />
               <h2 className="[font-family:'Chakra_Petch',Helvetica] font-normal text-white text-lg md:text-xl lg:text-[26.7px] tracking-[-0.80px]">
                 Problem
@@ -64,7 +63,7 @@ export const ProblemSolutionSection = () => {
             {problemItems.map((item, index) => (
               <Card key={index} className={`${item.bgColor} border-none rounded-none`}>
                 <CardContent className="flex flex-col items-start gap-6 px-4 md:px-8 lg:px-[53.33px] py-6 md:py-8">
-                  <p className="[font-family:'Alliance_No.2-Regular',Helvetica] font-normal text-sm md:text-base lg:text-[18.7px] tracking-[-0.56px] leading-relaxed lg:leading-[22.4px]">
+                  <p className="[font-family:'Alliance_No.2-Regular',Helvetica] font-normal text-sm md:text-base lg:text-[17px] tracking-[-0.56px] leading-relaxed lg:leading-[22.4px]">
                     <span className="text-[#878787] tracking-[-0.10px]">{item.text}</span>
                     <span className="text-white tracking-[-0.10px]">{item.highlight}</span>
                     {item.additionalText && <span className="text-[#878787] tracking-[-0.10px]">{item.additionalText}</span>}
@@ -83,7 +82,7 @@ export const ProblemSolutionSection = () => {
               alt="Light canister"
               src="/images/untitled-2.png"
               className="absolute w-[430px] h-[666px]"
-              initial={{ x: "-100%" }} // fully hidden to the left
+              initial={{ x: "-100%" }} 
               animate={controls}
               variants={{
                 visible: { x: 0, transition: { duration: 1, ease: "easeOut" } },
@@ -91,9 +90,9 @@ export const ProblemSolutionSection = () => {
             />
           </div>
 
-          <div className="relative z-10 flex items-center gap-2 top-4 md:top-8 lg:top-[652px] left-4 md:left-8 lg:left-[53px] mt-[-40px]">
+          <div className="relative z-10 flex items-center gap-2 top-12 md:top-8 lg:top-[652px] left-4 md:left-8 lg:left-[53px] mt-[-40px]">
             <DotPattern color="bg-[#ff3604]" />
-            <h2 className="[font-family:'Chakra_Petch',Helvetica] font-normal text-white text-lg md:text-xl lg:text-[26.7px] tracking-[-0.80px]">
+            <h2 className=" [font-family:'Chakra_Petch',Helvetica] font-normal text-white text-lg md:text-xl lg:text-[26.7px] tracking-[-0.80px]">
               The Fleet Solution
             </h2>
           </div>
@@ -105,7 +104,7 @@ export const ProblemSolutionSection = () => {
                   <h3 className="[font-family:'Chakra_Petch',Helvetica] font-semibold text-white text-lg md:text-xl lg:text-[26.7px] tracking-[-1.07px] leading-tight lg:leading-[39.0px] lg:whitespace-nowrap">
                     {item.title}
                   </h3>
-                  <p className="opacity-70 [font-family:'Alliance_No.2-Regular',Helvetica] font-normal text-white text-sm md:text-base lg:text-[18.7px] tracking-[-0.56px] leading-[normal]">
+                  <p className="opacity-70 [font-family:'Alliance_No.2-Regular',Helvetica] font-normal text-white text-sm md:text-base lg:text-[17px] tracking-[-0.56px] leading-[normal]">
                     {item.description}
                   </p>
                 </CardContent>

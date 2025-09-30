@@ -11,16 +11,16 @@ const CTASection = () => {
 
             {/* cta button */}
 			<button className="flex justify-start items-center gap-1">
-				<div className="w-60 p-3.5 bg-white rounded-sm flex justify-center items-center gap-2.5">
-					<div className="justify-start text-black text-lg font-medium">
+				<div className="md:w-60 p-2 md:p-3.5 bg-white rounded-sm flex justify-center items-center gap-2.5">
+					<div className="text-black md:text-lg font-medium text-nowrap">
 						Explore the Marketplace
 					</div>
 				</div>
-				<div className="w-12 h-14 relative bg-white rounded-sm overflow-hidden">
+				<div className="w-12 h-10 md:h-14 relative bg-white rounded-sm overflow-hidden">
 					<div className="w-2.5 h-4 left-[21.33px] top-[16px] absolute">
-						<div className="w-[5px] h-[5px] -left-1 top-0 absolute bg-orange-600" />
+						<div className="w-[5px] h-[5px] -left-1 -top-1 md:top-0 absolute bg-orange-600" />
 						<div className="w-[5px] h-[5px] -left-1 top-[13.33px] absolute bg-orange-600" />
-						<div className="w-[5px] h-[5px] left-[6.67px] top-[6.67px] absolute bg-orange-600" />
+						<div className="w-[5px] h-[5px] left-[6.67px] top-1 md:top-[6.67px] absolute bg-orange-600" />
 					</div>
 				</div>
 			</button>

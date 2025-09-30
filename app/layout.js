@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import localFont from "next/font/local";
 import SmoothScrollWrapper from "@/components/SmoothScrollWrapper";
+import ScrollIndicator from "@/components/ScrollIndicator";
 
 const allianceNo2 = localFont({
 	src: [
@@ -74,9 +75,11 @@ export default function RootLayout({ children }) {
 		>
 			<body className="font-allianceNo2">
 				<SmoothScrollWrapper>
-					<Navbar />
 					<main className="pt-[84px] md:pt-[84px] lg:pt-[84px] max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8">
+						<Navbar />
+						<ScrollIndicator left= "true" />
 						{children}
+						<ScrollIndicator />
 					</main>
 					<Footer />
 				</SmoothScrollWrapper>

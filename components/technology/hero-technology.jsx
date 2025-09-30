@@ -65,23 +65,23 @@ const HeroTechnology = () => {
 
 			{/* Foreground content */}
 			<div className="relative p-5 z-10 flex flex-col items-center justify-center top-[90px] text-white">
-				<h6 className="text-[#b4b4b4] font-chakrapetch font-medium sm:text-sm md:text-lg text-center">
+				<h6 className="text-[#b4b4b4] font-chakrapetch font-medium  md:text-lg text-center">
 					HOW FLEET ROBOTICS WORKS
 				</h6>
-				<h1 className="flex flex-col font-allianceNo2 mt-[35px]  gap-2 w-[90%]">
-					<span className="font-black text-3xl sm:text-4xl  lg:text-6xl text-center md:text-right w-full">
+				<h1 className="flex flex-col font-allianceNo2 mt-[35px]  gap-2 w-[95%]">
+					<span className="font-black text-5xl  lg:text-6xl text-center md:text-right w-full">
 						Every robot that joins Fleet
 					</span>
-					<span className="font-black text-3xl sm:text-4xl   lg:text-6xl  text-center md:text-left w-full">
+					<span className="font-black text-5xl lg:text-6xl  text-center md:text-left w-full">
 						gets a Fleet ID{" "}
-						<span className="font-light text-[#b4b4b4] text-3xl sm:text-4xl   lg:text-6xl">
+						<span className="font-light text-[#b4b4b4] text-4xl   lg:text-6xl">
 							- its on chain passport.
 						</span>
 					</span>
 				</h1>
 			</div>
 
-			<div className="grid grid-cols-1  w-full justify-end items-start right-1/6  h-full">
+			<div className="hidden md:grid grid-cols-1  w-full justify-end items-start right-1/6  h-full">
 				<div className="relative z-10 flex flex-col items-start gap-10 justify-start mt-[100px] mb-[0px] ml-10 md:ml-auto md:mr-10">
 					<div className="max-w-[700px] opacity-90 text-left text-white text-xl font-normal my-6 px-5">
 						<h2 className="mb-7 font-semibold text-xl">

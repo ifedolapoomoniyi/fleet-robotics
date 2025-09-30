@@ -8,11 +8,13 @@ import EverythingRunsThrough from "@/components/roadmap/EverythingRunsThrough";
 import {WhyItMattersSection} from "@/components/roadmap/WhyItMattersSection";
 import MarketplaceCarousel from "@/components/technology/marketplace-carousel";
 import RandomSection from "@/components/technology/random-section";
+import MobileFleet from '@/components/technology/MobileFleet';
 
 const Page = () => {
     return (
         <main  className=" overflow-hidden w-full flex flex-col relative min-h-screen bg-black text-white">
             <HeroTechnology />
+            <MobileFleet/>
             <Marketplace/>
             <MarketplaceCarousel/>
             <RandomSection/>

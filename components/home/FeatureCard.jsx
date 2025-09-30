@@ -6,9 +6,9 @@
 export default function FeatureCard({title1, title2, description, details, index}) {
 
   return (
-    <section className="flex flex-row">
+    <section className="flex flex-col md:flex-row min-w-[80vw] md:min-w-min">
       {/* Left Side */}
-      <div className="bg-gradient-to-br from-[#fbe9e7] to-[#fbe9e7]/70 p-5 flex flex-col justify-center max-h-[400px] w-[500px]">
+      <div className="bg-gradient-to-br from-[#fbe9e7] to-[#fbe9e7]/70 p-5 flex flex-col justify-center max-h-[400px] md:w-[500px]">
         <div className="flex flex-row justify-between w-full mb-auto h-full">
           <div className="text-sm uppercase tracking-wide text-gray-500 mb-2">
             <span className="inline-block w-3 h-3 bg-gray-400 mr-2 "></span>
@@ -20,7 +20,7 @@ export default function FeatureCard({title1, title2, description, details, index
           </div>
         </div>
 
-        <h2 className="text-4xl font-bold text-gray-900 mb-6">
+        <h2 className="md:text-4xl text-3xl font-bold text-gray-900 mb-6">
           {title1}<br /> {title2}
         </h2>
         <p className="text-gray-600 max-w-md">
@@ -29,7 +29,7 @@ export default function FeatureCard({title1, title2, description, details, index
       </div>
 
       {/* Right Side */}
-      <div className="flex flex-col w-[470px]">
+      <div className="flex flex-col md:w-[470px]">
         <div className="flex flex-col divide-y divide-red-500">
           {details?.map((offer, i) => (
             <div

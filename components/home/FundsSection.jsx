@@ -32,7 +32,7 @@ export default function FundsSection() {
 		<section className="lg:mx-[80px] my-10 h-full bg-black text-white px-4 sm:px-6 md:px-10 py-8 md:py-16 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-0">
 			{/* Left Text Section */}
 			<div className="h-full flex flex-col">
-				<h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight md:leading-tighter pr-4">
+				<h2 className="text-4xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight md:leading-tighter pr-4">
 					Funds Raised & <br className="hidden sm:block" /> 
 					<span className="sm:hidden">Tokens </span>
 					<span className="hidden sm:inline">Tokens Distributed</span>

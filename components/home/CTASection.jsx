@@ -18,9 +18,9 @@ const CTASection = () => {
 				</div>
 				<div className="w-12 h-14 relative bg-white rounded-sm overflow-hidden">
 					<div className="w-2.5 h-4 left-[21.33px] top-[16px] absolute">
-						<div className="w-1 h-1 left-0 top-0 absolute bg-orange-600" />
-						<div className="w-1 h-1 left-0 top-[13.33px] absolute bg-orange-600" />
-						<div className="w-1 h-1 left-[6.67px] top-[6.67px] absolute bg-orange-600" />
+						<div className="w-[5px] h-[5px] -left-1 top-0 absolute bg-orange-600" />
+						<div className="w-[5px] h-[5px] -left-1 top-[13.33px] absolute bg-orange-600" />
+						<div className="w-[5px] h-[5px] left-[6.67px] top-[6.67px] absolute bg-orange-600" />
 					</div>
 				</div>
 			</button>

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const RandomSection = () => {
     return (
-        <section  className="font-chakrapetch w-full px-10 py-12">
+        <section  className="hidden md:inline-flex md:text-sm  lg:text-lg font-chakrapetch w-full px-10 py-12">
             <div  className="grid grid-cols-1 justify-between sm:grid-cols-3 lg:grid-cols-3 w-full" >
                 <div className="flex flex-col items-center uppercase p-3 bg-black/20">
                     <li className="flex uppercase flex-row items-center gap-3">

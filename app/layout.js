@@ -26,7 +26,7 @@ const allianceNo2Light = localFont({
 const chakraPetch = localFont({
 	src: [
 		{
-			path: "../public/fonts/chakra_Petch/ChakraPetch-Regular.ttf",
+			path: "../public/fonts/Chakra_Petch/ChakraPetch-Regular.ttf",
 			weight: "400",
 			style: "normal",
 		},

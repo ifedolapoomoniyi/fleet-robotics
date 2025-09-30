@@ -140,7 +140,7 @@ export default function TeamCarousel() {
 
 	return (
 		<div className="relative w-full max-w-9xl mx-auto mt-12 py-8 bg-transparent min-h-screen">
-			<div className="relative flex items-center justify-center mb-12">
+			<div className="relative flex items-center justify-center mb-6">
 				{/* Cards Container */}
 				<div className="relative h-[500px] md:h-[550px] top-20 flex items-center justify-center">
 					{teamMembers.map((member, index) => {
@@ -178,7 +178,7 @@ export default function TeamCarousel() {
 									{/* Image Container with Gradient Background */}
 									<div className="relative w-72 h-96 md:w-80 md:h-96 rounded overflow-hidden">
 										{/* Gradient Background */}
-										<div className="absolute inset-0 bg-gradient-to-br from-black via-[#eb2f01] to-black opacity-95" />
+										<div className="absolute inset-0 bg-gradient-to-br from-black via-[#eb2f01] to-black opacity-95 " />
 
 										{/* Profile Image */}
 										<Image
@@ -211,7 +211,7 @@ export default function TeamCarousel() {
 			</div>
 
 			{/* Person Details Section Below Carousel */}
-			<div className="text-center bg-black text-white mt-10">
+			<div className="text-center bg-black text-white mt-20 md:mt-12">
 				<div className="max-w-2xl mx-auto">
 					<div className="flex w-full items-center justify-center gap-7 mb-2">
 						<button
@@ -255,7 +255,7 @@ export default function TeamCarousel() {
 					</p>
 
 					{/* Social Links */}
-					<div className="flex justify-center space-x-4 mb-8">
+					<div className="flex justify-center space-x-4 md:z-auto md:mb-8">
 						{teamMembers[currentIndex].social.linkedin && (
 							<a
 								href={teamMembers[currentIndex].social.linkedin}

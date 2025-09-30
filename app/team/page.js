@@ -5,7 +5,7 @@ import TeamCarousel from "@/components/team/team-carousel";
 
 const Page = () => {
     return (
-        <main className="overflow-hidden w-full flex flex-col relative min-h-screen text-white mb-64">
+        <main className="overflow-hidden w-full flex flex-col relative min-h-screen text-white mb-24 md:mb-30">
             <section className='bg-linear-0 h-[100%] from-transparent via-[#eb2f01]/30 to-transparent relative'>
                 {/* Background Image Overlay */}
                 <div
@@ -30,7 +30,7 @@ const Page = () => {
 
                 {/* Content with higher z-index */}
                 <div className="relative z-10">
-                    <h1 className='font-black mb-[100px] font-allianceNo2 text-3xl sm:text-4xl lg:text-6xl text-center mt-[80px] md:mt-[120px] w-full'>
+                    <h1 className='font-black mb-[40px] md:mb-[100px] font-allianceNo2 text-3xl sm:text-4xl lg:text-6xl text-center mt-[80px] md:mt-[120px] w-full'>
                         Our <span className='font-light'>Team</span>
                     </h1>
 

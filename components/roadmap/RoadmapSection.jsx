@@ -25,7 +25,7 @@ const roadmapPhases = [
 
 export const RoadmapSection = ()=> {
   return (
-    <section className="relative w-[1777px] h-[1067px] bg-black overflow-hidden border-t-[1.33px] [border-top-style:solid] border-b-[1.33px] [border-bottom-style:solid] border-[#1a1a1a]">
+    <section className="relative  z-40  w-[1777px] h-[1067px] bg-black overflow-hidden border-t-[1.33px] [border-top-style:solid] border-b-[1.33px] [border-bottom-style:solid] border-[#1a1a1a]">
       <img
         className="absolute top-0 left-0 w-[1420px] h-[800px]"
         alt="Background"

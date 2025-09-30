@@ -152,7 +152,7 @@ export default function MarketplaceCarousel() {
 
 
     return (
-        <section className="relative w-full max-w-[1440px] mx-auto px-2 sm:px-4">
+        <section className="relative w-full max-w-[1560px] mx-auto px-2 sm:px-4">
             {/* Header with controls */}
             <div className="flex items-center justify-between mb-6">
                 <div className="text-white hidden">
@@ -232,23 +232,23 @@ export default function MarketplaceCarousel() {
                             opacity = 1
                             zIndex = 20
                         } else if (offset === 1) {
-                            position = isMobile ? 280 : 340
+                            position = isMobile ? 280 : 390
                             scale = 0.85
                             opacity = 1
                             zIndex = 10
                         } else if (offset === 2) {
-                            position = isMobile ? 460 : 580
-                            scale = 0.7
+                            position = isMobile ? 460 : 740
+                            scale = 0.85
                             opacity = 1
                             zIndex = 5
                         } else if (offset === products.length - 1) {
-                            position = isMobile ? -280 : -340
+                            position = isMobile ? -280 : -390
                             scale = 0.85
                             opacity = 1
                             zIndex = 10
                         } else if (offset === products.length - 2) {
-                            position = isMobile ? -460 : -580
-                            scale = 0.7
+                            position = isMobile ? -460 : -740
+                            scale = 0.85
                             opacity = 1
                             zIndex = 5
                         } else {

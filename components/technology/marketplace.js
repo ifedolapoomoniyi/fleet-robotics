@@ -4,12 +4,12 @@ import Image from "next/image";
 
 const Marketplace = () => {
     return (
-        <section className="font-chakrapetch w-full px-10 py-12">
-            <div className='py-12'>
+        <section className="font-chakrapetch w-full md:px-10 py-12">
+            <div className='py-12 md:border-0 border border-[#1A1A1A] p-6'>
                 <h6 className="text-[#b4b4b4] font-chakrapetch font-medium sm:text-sm md:text-lg text-left mb-6">
                     MARKETPLACE
                 </h6>
-                <h1 className='font-black text-3xl sm:text-4xl  lg:text-6xl text-left w-full'>
+                <h1 className='font-black text-4xl sm:text-5xl  lg:text-6xl text-left w-full'>
                     The Marketplace Where Robots Work
                 </h1>
             </div>
@@ -26,7 +26,7 @@ const Marketplace = () => {
                 {/* Block 3 */}
                 <div className="flex flex-col justify-between border border-[#1A1A1A]  p-6 bg-black/20">
                     <div>
-                        <ul className="opacity-60 uppercase text-left text-white text-sm font-normal space-y-3">
+                        <ul className="opacity-100 sm:opacity-60 uppercase text-left text-white text-sm font-normal space-y-3">
                             <li className="flex flex-row items-center gap-3">
                                 <Image
                                     src="/images/Frame%20108029.svg"

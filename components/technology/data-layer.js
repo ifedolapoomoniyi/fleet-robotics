@@ -41,12 +41,12 @@ const DataLayer = () => {
 
             {/* Foreground content */}
             <div className="relative z-10 flex top-0 flex-col items-center justify-center px-4 py-6 text-center text-white bg-gradient-to-b from-[#000000] via-[#000000] to-transparent">
-                <h6 className="text-[#b4b4b4] font-chakrapetch font-medium text-sm sm:text-base md:text-lg">
+                <h6 className="text-[#b4b4b4] font-chakrapetch font-medium text-md sm:text-base md:text-lg">
                     DATA LAYER
                 </h6>
 
-                <h1 className="mt-2 font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight w-full">
-                   Turning Robot Data <span className="font-light text-[#ffffff]/90 text-2xl sm:text-3xl md:text-5xl lg:text-6xl">into an Asset</span>
+                <h1 className="mt-2 font-black  text-5xl sm:text-6xl  lg:text-7xl leading-tight w-full">
+                   Turning Robot Data <span className="font-light text-[#ffffff]/90 ttext-5xl sm:text-6xl  lg:text-7xl">into an Asset</span>
                     {/*<span className="block font-light text-[#b4b4b4] text-2xl sm:text-3xl md:text-5xl lg:text-7xl">*/}
 
                 </h1>
@@ -64,7 +64,7 @@ const DataLayer = () => {
 
             {/* Footer caption */}
             <div className="relative z-10 px-4 pb-10 text-center uppercase">
-                <h6 className="text-[#b4b4b4] font-chakrapetch font-medium text-xs sm:text-sm md:text-base lg:text-lg">
+                <h6 className="text-[#b4b4b4] font-chakrapetch font-medium text-md sm:text-sm md:text-base lg:text-lg">
                     Data isn’t wasted — it becomes a new revenue stream.
                 </h6>
             </div>

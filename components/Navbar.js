@@ -77,7 +77,7 @@ export const Navbar = () => {
           {/* Mobile Menu Button (always right) */}
           <button
             onClick={toggleMobileMenu}
-            className="lg:hidden flex items-center justify-center w-10 h-10 text-white hover:bg-white/10 rounded-md transition-colors"
+            className="lg:hidden cursor-pointer flex items-center justify-center w-10 h-10 text-white hover:bg-white/10 rounded-md transition-colors"
             aria-label="Toggle mobile menu"
           >
             <Menu className="w-6 h-6" />
@@ -99,7 +99,7 @@ export const Navbar = () => {
               <div className="flex justify-end px-6 py-4 ml-0 mt-1 bg-black">
                 <button
                   onClick={toggleMobileMenu}
-                  className="text-white hover:text-[#ff3604] transition-colors"
+                  className="text-white cursor-pointer hover:text-[#ff3604] transition-colors"
                   aria-label="Close mobile menu"
                 >
                   <X className="w-7 h-7" />

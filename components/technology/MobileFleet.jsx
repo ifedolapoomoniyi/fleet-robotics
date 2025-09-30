@@ -3,8 +3,8 @@ import Image from "next/image";
 const MobileFleet = () => {
 	return (
 		<div>
-			<div className="md:hidden grid grid-cols-1  w-full justify-end items-start right-1/6  h-full ">
-				<div className="relative z-10 flex flex-col items-start gap-10 justify-start mt-[100px] mb-[0px] ml-10 md:ml-auto md:mr-10">
+			<div className="md:hidden grid grid-cols-1  w-full justify-end items-start right-1/6  h-full border border-[#1A1A1A] ">
+				<div className="relative z-10 flex flex-col items-start gap-10 justify-start mb-[0px] md:ml-auto md:mr-10">
 					<div className="max-w-[700px] opacity-90 text-left text-white text-xl font-normal my-6 px-5">
 						<h2 className="mb-7 font-semibold text-xl">
 							FLEET IDs

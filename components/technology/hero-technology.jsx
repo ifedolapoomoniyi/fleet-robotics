@@ -64,15 +64,15 @@ const HeroTechnology = () => {
 			)}
 
 			{/* Foreground content */}
-			<div className="relative p-5 z-10 flex flex-col items-center justify-center top-[90px] text-white">
-				<h6 className="text-[#b4b4b4] font-chakrapetch font-medium  md:text-lg text-center">
+			<div className="relative p-5 z-10 flex flex-col md:items-center justify-center top-[90px] text-white ">
+				<h6 className="text-[#b4b4b4] font-chakrapetch font-medium  md:text-lg text-left md:text-center">
 					HOW FLEET ROBOTICS WORKS
 				</h6>
 				<h1 className="flex flex-col font-allianceNo2 mt-[35px]  gap-2 w-[95%]">
-					<span className="font-black text-5xl  lg:text-6xl text-center md:text-right w-full">
+					<span className="font-black text-5xl  lg:text-6xl sm:text-center md:text-right w-full">
 						Every robot that joins Fleet
 					</span>
-					<span className="font-black text-5xl lg:text-6xl  text-center md:text-left w-full">
+					<span className="font-black text-5xl lg:text-6xl  sm:text-center md:text-left w-full">
 						gets a Fleet ID{" "}
 						<span className="font-light text-[#b4b4b4] text-4xl   lg:text-6xl">
 							- its on chain passport.

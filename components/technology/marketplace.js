@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Marketplace = () => {
     return (
-        <section className="font-chakrapetch w-full md:px-10 py-12">
+        <section className="font-chakrapetch w-full md:pb-10 pb-12">
             <div className='py-12 md:border-0 border border-[#1A1A1A] p-6'>
                 <h6 className="text-[#b4b4b4] font-chakrapetch font-medium sm:text-sm md:text-lg text-left mb-6">
                     MARKETPLACE

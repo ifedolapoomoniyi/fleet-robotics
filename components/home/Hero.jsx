@@ -1,18 +1,21 @@
+import Image from "next/image";
 import React from "react";
 
 const Hero = () => {
 	return (
-		<section className="bg-[url('/images/hero-bg.png')] h-[90vh] md:h-[130vh] bg-cover bg-no-repeat bg-center flex flex-col items-center mb-[200px] font-allianceNo2 p-4 relative z-0">
+		<section
+			className="bg-[url('/images/mobile-hero-bg.png')] md:bg-[url('/images/hero-bg.png')] h-[90vh] lg:h-[130vh] md:bg-cover bg-no-repeat md:bg-center bg-[length:100%_auto] bg-[center_top] flex flex-col items-center mb-[200px] font-allianceNo2 p-4 relative z-0"
+		>
 			{/* dark bg overlay */}
 			<div className="absolute inset-0 bg-black/60 md:bg-black/40 -z-10"></div>
 
 			{/* content */}
-			<div className="self-stretch text-center justify-start pt-[18vh] md:pt-[100px] mt-[50px]">
-				<span className="text-white text-4xl md:text-7xl font-semibold">
+			<div className="self-stretch text-center justify-start md:pt-[70px] 2xl:pt-[100px] mt-[25px]">
+				<span className="text-white text-5xl md:text-7xl font-semibold">
 					Hire Robots Instantly
 					<br />
 				</span>
-				<span className="text-white/85 text-4xl md:text-7xl font-light tracking-tighter">
+				<span className="text-white/85 text-5xl md:text-7xl font-light tracking-tighter">
 					Pay in Crypto. Trust the Blockchain.
 				</span>
 			</div>
@@ -36,7 +39,19 @@ const Hero = () => {
 					</div>
 				</div>
 			</button>
-			<div className="text-white max-w-[500px] flex flex-col items-center mt-auto relative top-[100px]">
+
+			<div className="w-full py-10 md:hidden">
+				<Image
+					src={"/images/home-hero-img.png"}
+					alt="Heor image"
+					className="w-full"
+					priority
+					width={1900}
+					height={768}
+				/>
+			</div>
+
+			<div className="text-white max-w-[500px] flex flex-col items-center mt-auto relative md:top-[100px]">
 				<div className="border border-[#9A9A9A] flex flex-row text-white p-2 justify-between relative w-[330px] text-sm sm:text-base sm:w-[400px]">
 					<div className="text-nowrap">From Job Request</div>
 					<div className="bg-[#FF3B0F] p-3 sm:p-4 text-4xl sm:text-5xl rounded font-semibold absolute left-[40%] -top-5">

@@ -31,8 +31,8 @@ const VerticalTextScroller = () => {
                 index === currentIndex
                   ? "opacity-100 transform translate-y-0"
                   : index === (currentIndex - 1 + texts.length) % texts.length
-                  ? "opacity-20 transform -translate-y-full"
-                  : "opacity-20 transform translate-y-full"
+                  ? "opacity-12 transform -translate-y-full"
+                  : "opacity-12 transform translate-y-full"
               }`}
             >
               <h1 className="text-white">{text}</h1>

@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react"; // icons
+import React, { useRef, useEffect, useState } from "react";
 
 const testimonials = [
 	{
@@ -32,18 +31,25 @@ const testimonials = [
 
 const TestimonialCards = () => {
 	const scrollRef = useRef(null);
+	const isMobile = useState(false);
+	const [cardWidth, setCardWidth] = useState(400);
 
+	useEffect(() => {
+		if (window.innerWidth < 768) {
+			setCardWidth(320)
+		}
+	});
 	const scroll = (direction) => {
 		if (scrollRef.current) {
 			scrollRef.current.scrollBy({
-				left: direction === "left" ? -400 : 400,
+				left: direction === "left" ? -cardWidth : cardWidth,
 				behavior: "smooth",
 			});
 		}
 	};
 
 	return (
-		<section className=" text-white px-6 relative">
+		<section className=" text-white pl-6 relative">
 			<div className="max-w-7xl mx-auto">
 				{/* Arrow Controls */}
 				<div className="flex gap-4 mb-6 absolute -top-[60px]">
@@ -56,10 +62,7 @@ const TestimonialCards = () => {
 							</div>
 						</div>
 					</button>
-					<button
-						onClick={() => scroll("right")}
-						className=""
-					>
+					<button onClick={() => scroll("right")} className="">
 						<div className="w-12 h-12 relative bg-orange-600 rounded-sm overflow-hidden">
 							<div className="w-2.5 h-4 left-[20px] top-[17.33px] absolute">
 								<div className="w-1 h-1 left-0 top-0 absolute bg-white"></div>
@@ -78,7 +81,7 @@ const TestimonialCards = () => {
 					{testimonials.map((item, index) => (
 						<div
 							key={index}
-							className={`w-[400px] h-[500px] bg-black hover:bg-[#0B0B0B] transition-all duration-500 border border-gray-800 p-8 flex flex-col justify-between flex-shrink-0`}
+							className={`w-[320px] md:w-[400px] h-[500px] bg-black hover:bg-[#0B0B0B] transition-all duration-500 border border-gray-800 p-8 flex flex-col justify-between flex-shrink-0`}
 						>
 							<div>
 								<img

@@ -24,7 +24,7 @@ export const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 right-0 w-full md:h-[84px] bg-[#000000cc] border-b-[1.33px] border-[#1a1a1a] backdrop-blur backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(8px)_brightness(100%)] z-50">
       {/* Decorative Lines - Desktop Only */}
-      <img
+      {/* <img
         className="hidden lg:block fixed top-0 left-0 w-[71px] z-[51]"
         alt="Loadbar left"
         src="/images/loadbar-left-1.svg"
@@ -33,7 +33,7 @@ export const Navbar = () => {
         className="hidden lg:block fixed top-0 right-0 w-[72px] z-[51]"
         alt="Loadbar right"
         src="/images/loadbar-left-1.svg"
-      />
+      /> */}
 
       <div className="relative w-full h-full max-w-[1920px] mx-auto">
         <div className="flex items-center justify-between h-full px-4 sm:px-6 md:px-8 lg:px-[98px]">

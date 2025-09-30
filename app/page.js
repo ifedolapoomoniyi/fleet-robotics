@@ -17,7 +17,7 @@ export default function Page() {
 			<WhatWeOffer />
 			<Testimonials />
 			<MarqueeComponent>
-				<div className="px-[200px]">Robots as gig workers</div>
+				<div className="px-[200px] text-[90px] md:text-[200px]">Robots as gig workers</div>
 			</MarqueeComponent>
 			<FundsSection />
 			<CTASection />

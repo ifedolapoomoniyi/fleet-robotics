@@ -6,11 +6,11 @@ const About = () => {
 	return (
 		<section className="text-white mt-[80px] lg:mx-[70px] mx-6 min-h-[700px] flex flex-col justify-center">
 			<div>
-				<div className="uppercase font-semibold text-sm sm:text-xl">
+				<div className="uppercase font-semibold text-sm sm:text-xl opacity-80 pb-2">
 					Robots for everyone
 				</div>
 
-				<h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl bg-gradient-to-r from-white via-white/30 to-white/10 bg-clip-text text-transparent flex justify-start flex-wrap md:flex-nowrap">
+				<h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl bg-white md:bg-gradient-to-r from-white via-white/30 to-white/10 bg-clip-text text-transparent flex justify-start flex-wrap md:flex-nowrap">
 					Explore marketplace for&nbsp;
 					<VerticalTextScroller />
 				</h2>

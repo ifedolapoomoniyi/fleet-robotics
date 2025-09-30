@@ -14,10 +14,17 @@ export const WhyItMattersSection = () => {
       <div className="relative z-10 flex flex-col lg:flex-row items-center lg:items-start gap-8 md:gap-12 w-full max-w-5xl mx-auto px-4 md:px-8 pt-16 lg:pt-[163px]">
         {/* Left content */}
         <div className="flex-1">
-          <h1 className="mt-[-1.33px]  font-allianceNo2 font-medium text-white text-2xl md:text-4xl lg:text-[80.3px] text-center lg:text-center tracking-tight leading-tight md:leading-[50px] lg:leading-[85.3px] mb-8 lg:mb-0">
+          <h1 className="mt-[-1.33px] hidden md:block  font-allianceNo2 font-medium text-white text-2xl md:text-4xl lg:text-[80.3px] text-center lg:text-center tracking-tight leading-tight md:leading-[50px] lg:leading-[85.3px] mb-8 lg:mb-0">
             Robots don&apos;t need jobs. They just need wallets. Fleet is the
             solution.
           </h1>
+          <h1 className="mt-[-1.33px] block md:hidden font-allianceNo2 font-medium text-white text-2xl md:text-4xl lg:text-[80.3px] text-center lg:text-center tracking-tight leading-tight md:leading-[50px] lg:leading-[85.3px] mb-8 lg:mb-0">
+            Ready to Hire Your First Robot?
+          </h1>
+          <p className="opacity-75 block md:hidden text-center font-normal text-white text-sm md:text-base lg:text-[18.7px] tracking-[-0.56px] leading-[normal]">
+            The future doesn’t wait, and neither should you. Ready to join the
+            robotic revolution?
+          </p>
           <div className="flex justify-center mt-6 items-center gap-1.5">
             <div className="cursor-pointer w-60 p-3.5 bg-white rounded-sm flex justify-center items-center gap-2.5">
               <div className="justify-start text-black text-lg font-medium ">
@@ -34,14 +41,19 @@ export const WhyItMattersSection = () => {
             </div>
           </div>
         </div>
-
-   
       </div>
 
       {/* Right-side big image */}
+      {/* r-mobile */}
       <img
         className="absolute top-0 z-10  right-0 w-1/2 h-full object-cover hidden lg:block"
         src="/images/roboruk-1.svg"
+        alt="Roboruk"
+      />
+
+      <img
+        className="absolute -top-5   right-0  h-full  block lg:hidden"
+        src="/images/r-mobile.svg"
         alt="Roboruk"
       />
     </section>

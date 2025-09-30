@@ -59,7 +59,21 @@ export default function MarketplaceCarousel() {
     const [isAutoPlaying, setIsAutoPlaying] = useState(true)
     const [touchStart, setTouchStart] = useState(null)
     const [touchEnd, setTouchEnd] = useState(null)
+    const [isMobile, setIsMobile] = useState(false)
     const carouselRef = useRef(null)
+
+    // Handle window resize to fix undefined bug
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768)
+        }
+        
+        // Set initial value
+        handleResize()
+        
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
 
     const nextSlide = useCallback(() => {
         setActiveIndex((prev) => (prev + 1) % products.length)
@@ -81,7 +95,7 @@ export default function MarketplaceCarousel() {
     useEffect(() => {
         if (!isAutoPlaying) return
 
-        const interval = setInterval(nextSlide, 4000)
+        const interval = setInterval(nextSlide, 5000)
         return () => clearInterval(interval)
     }, [nextSlide, isAutoPlaying])
 
@@ -218,22 +232,22 @@ export default function MarketplaceCarousel() {
                             opacity = 1
                             zIndex = 20
                         } else if (offset === 1) {
-                            position = window.innerWidth < 768 ? 280 : 340
+                            position = isMobile ? 280 : 340
                             scale = 0.85
                             opacity = 1
                             zIndex = 10
                         } else if (offset === 2) {
-                            position = window.innerWidth < 768 ? 460 : 580
+                            position = isMobile ? 460 : 580
                             scale = 0.7
                             opacity = 1
                             zIndex = 5
                         } else if (offset === products.length - 1) {
-                            position = window.innerWidth < 768 ? -280 : -340
+                            position = isMobile ? -280 : -340
                             scale = 0.85
                             opacity = 1
                             zIndex = 10
                         } else if (offset === products.length - 2) {
-                            position = window.innerWidth < 768 ? -460 : -580
+                            position = isMobile ? -460 : -580
                             scale = 0.7
                             opacity = 1
                             zIndex = 5
@@ -259,14 +273,14 @@ export default function MarketplaceCarousel() {
                                     type: "spring",
                                     stiffness: 100,
                                     damping: 25,
-                                    opacity: { duration: 0.3 }
+                                    opacity: { duration: 0.8 }
                                 }}
                                 onClick={() => !isActive && goToSlide(index)}
                                 role="tabpanel"
                                 aria-label={`Robot ${product.name}`}
                             >
                                 <div
-                                    className={`relative w-[300px] sm:w-[400px]   rounded-sm overflow-hidden shadow-xl transition-all duration-500 ${
+                                    className={`relative w-[300px] sm:w-[400px]   rounded-sm overflow-hidden shadow-xl transition-all duration-1000 ${
                                         isActive
                                             ? "bg-gradient-to-br from-[#eb2f01] to-[#eb2f01]"
                                             : "bg-[#141313fa] hover:bg-[#141313fa] group shadow-gray-900/10"

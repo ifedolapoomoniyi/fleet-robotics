@@ -1,6 +1,6 @@
 const CTASection = () => {
 	return (
-		<div className="flex flex-col items-center bg-[url('/images/cta-bg.png')] min-h-[80vh] bg-top lg:bg-contain bg-no-repeat mx-7 md:mx-[80px] my-20">
+		<div className="flex flex-col items-center bg-[url('/images/cta-bg.png')] min-h-[80vh] bg-top lg:bg-contain bg-no-repeat mx-7 md:mx-[80px] my-20 px-5">
 			<h2 className="text-4xl md:text-7xl mt-29 font-semibold max-w-[700px] text-center">
 				Ready to Hire Your First Robot?
 			</h2>

@@ -6,7 +6,7 @@ const About = () => {
 	return (
 		<section className="text-white mt-[80px] lg:mx-[70px] mx-6 min-h-[700px] flex flex-col justify-center">
 			<div>
-				<div className="uppercase font-semibold text-lg sm:text-xl">
+				<div className="uppercase font-semibold text-sm sm:text-xl">
 					Robots for everyone
 				</div>
 

@@ -40,7 +40,7 @@ export const Navbar = () => {
               <Link
                 key={index}
                 href={item.href}
-                className={`inline-flex items-center gap-1.5 relative flex-[0_0_auto] ${
+                className={`inline-flex hover:opacity-100 duration-300 items-center gap-1.5 relative flex-[0_0_auto] ${
                   pathname === item.href ? "" : "opacity-65"
                 }`}
               >
@@ -66,8 +66,8 @@ export const Navbar = () => {
 
           {/* Desktop CTA (unchanged) */}
           <div className="hidden sm:flex items-center gap-2 lg:gap-[5.33px]">
-            <Button className="inline-flex items-center justify-center gap-[10.67px] px-2 py-2 sm:px-3 sm:py-2.5 lg:px-[13.33px] lg:py-[10.67px] bg-[#ff3604] rounded-[2.67px] h-auto hover:bg-[#ff3604]/90 text-xs sm:text-sm lg:text-[18.7px]">
-              <div className="font-medium text-white tracking-[-0.56px]">
+            <Button className="inline-flex items-center justify-center gap-[10.67px] px-2 py-2 sm:px-3 sm:py-2.5 lg:px-[13.33px] lg:py-[10.67px] bg-[#ff3604] rounded-[2.67px] h-auto hover:bg-white duration-300 transition-all hover:text-orange-600 hover:scale-105 text-xs sm:text-sm lg:text-[18.7px]">
+              <div className="font-medium">
                 <span className="hidden sm:inline">Hire Robot Now</span>
                 <span className="sm:hidden">Hire Robot</span>
               </div>

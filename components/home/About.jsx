@@ -4,7 +4,7 @@ const items = ["robots", "drones", "agents"];
 
 const About = () => {
 	return (
-		<section className="text-white mt-[80px] lg:mx-[70px] mx-6 min-h-[700px] flex flex-col justify-center">
+		<section className="text-white mt-[80px] lg:px-[70px] px-6 min-h-[700px] flex flex-col justify-center border-x border-[#1A1A1A]">
 			<div>
 				<div className="uppercase font-semibold text-sm sm:text-xl opacity-80 pb-2">
 					Robots for everyone
@@ -27,13 +27,13 @@ const About = () => {
 
 					{/* Right CTA */}
 					<div>
-						<button className="flex justify-start items-center gap-1">
-							<div className="w-60 p-3.5 bg-white rounded-sm flex justify-center items-center gap-2.5">
-								<div className="justify-start text-black text-lg font-medium">
+						<button className="flex justify-start items-center gap-1 group hover:scale-105 duration-300">
+							<div className="w-60 p-3.5 bg-white rounded-sm flex justify-center items-center gap-2.5 group-hover:bg-orange-600 group-hover:text-white duration-300 text-black">
+								<div className="justify-start md:text-lg font-medium">
 									Explore the Marketplace
 								</div>
 							</div>
-							<div className="w-12 h-14 relative bg-orange-600 rounded-sm overflow-hidden">
+							<div className="w-12 h-14 relative group-hover:animate-puls bg-orange-600 rounded-sm overflow-hidden">
 								<div className="w-2.5 h-4 left-[21.33px] top-[16px] absolute">
 									<div className="w-1 h-1 left-0 top-0 absolute bg-white" />
 									<div className="w-1 h-1 left-0 top-[13.33px] absolute bg-white" />

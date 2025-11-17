@@ -17,10 +17,19 @@ export default function Page() {
 			<HowItWorksSection />
 			<WhatWeOffer />
 			<Testimonials />
-			<MarqueeComponent>
-				<div className="px-[200px] text-[90px] md:text-[200px]">Robots as gig workers</div>
-			</MarqueeComponent>
-			<TechnologyCTA/>
+			<div className="border border-[#1A1A1A] py-[150px] my-20">
+				<MarqueeComponent
+					style={
+						"bg-[url('/images/background.svg')]"
+					}
+				>
+					<div className="px-[200px] text-[90px] md:text-[200px] ">
+						Robots as gig workers
+					</div>
+				</MarqueeComponent>
+			</div>
+
+			<TechnologyCTA />
 			<FundsSection />
 			<CTASection />
 		</main>

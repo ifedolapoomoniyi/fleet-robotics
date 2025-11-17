@@ -44,7 +44,7 @@ const Cards = () => {
 	};
 
 	return (
-		<div className="p-6">
+		<div className="lg:py-6 lg:pb-0 w-full 2xl:flex flex-col justify-center m-auto mb-0">
 			{/* navigation buttons */}
 			<div className="flex justify-start gap-2 mb-4">
 				<button onClick={() => scroll("left")} className="">
@@ -70,14 +70,14 @@ const Cards = () => {
 			{/* scrollable cards */}
 			<div
 				ref={scrollRef}
-				className="flex flex-row gap-5 mt-4 relative overflow-x-auto scrollbar-hide scroll-smooth"
+				className="flex flex-row gap-5 mt-4 relative overflow-x-auto scrollbar-hide scroll-smooth 2xl:m-auto"
 			>
 				{/* line strip */}
-				<div className="w-full z-10">
+				<div className="w-full absolute z-10">
 					<Image
 						src={"/images/cards-line.svg"}
 						alt="Fleet Robotics logo"
-						className="overflow-hidden absolute top-[70px] max-w-[1259px] h-[100px] z-[100] ml-5"
+						className="overflow-hidden absolute top-[70px] max-w-[1259px] h-[100px] z-[100]"
 						priority
 						width={2000}
 						height={36}
@@ -95,15 +95,15 @@ const Cards = () => {
 								step.active == true
 									? "bg-[#FF3604]"
 									: "bg-black"
-							}  group-hover:bg-[#FF3604] transition-all duration-500 border-gray-800 border-t border-l border-r`}
+							}  group-hover:bg-[#FF3604] transition-all duration-500 border-[#1A1A1A] border-t border-l border-r`}
 						></div>
 						<div className="absolute bg-black -right-2 -top-1 w-15 h-11 rounded"></div>
 
 						{/* content */}
-						<div className="rounded-r-lg rounded-b text-white transition-all duration-500 group-hover:bg-[#FF3604] flex flex-col justify-between h-[300px] relative min-w-[300px]">
-							<div className="absolute left-4 w-2.5 h-2.5 inline-block mix-blend-difference bg-orange-600 border-[1.33px]"></div>
+						<div className="rounded-r-lg rounded-b text-white transition-all duration-500 group-hover:bg-[#FF3604] flex flex-col justify-between h-[300px] relative w-[300px]">
+							<div className="absolute left-4 w-2.5 h-2.5 inline-block bg-orange-600 group-hover:bg-white border-0 transition-all duration-300"></div>
 							<div
-								className={`font-semibold flex flex-row rounded-tr gap-2 justify-between p-4 h-[100px] min-w-[300px] border border-gray-800 border-b-0 ${
+								className={`font-semibold flex flex-row rounded-tr gap-2 justify-between p-4 h-[100px] min-w-[300px] border border-[#1A1A1A] border-b-0 ${
 									step.active == true ? "bg-[#FF3604]" : ""
 								}`}
 							>

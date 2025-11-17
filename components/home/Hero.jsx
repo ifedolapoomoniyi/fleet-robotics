@@ -4,7 +4,7 @@ import React from "react";
 const Hero = () => {
 	return (
 		<section
-			className="bg-[url('/images/mobile-hero-bg.png')] md:bg-[url('/images/hero-bg.png')] h-[90vh] lg:h-[130vh] md:bg-cover bg-no-repeat md:bg-center bg-[length:100%_auto] bg-[center_top] flex flex-col items-center mb-[200px] font-allianceNo2 p-4 relative z-0"
+			className="bg-[url('/images/mobile-hero-bg.png')] md:bg-[url('/images/hero-bg.png')] h-[90vh] lg:h-[130vh] md:bg-cover bg-no-repeat md:bg-center bg-[length:100%_auto] bg-[center_top] flex flex-col items-center mb-[200px] font-allianceNo2 p-4 relative z-0 border-x border-[#1A1A1A]"
 		>
 			{/* dark bg overlay */}
 			<div className="absolute inset-0 bg-black/60 md:bg-black/40 -z-10"></div>
@@ -24,18 +24,19 @@ const Hero = () => {
 				robots operate as gig workers. Book delivery drones, cleaning
 				bots, robots on demand
 			</div>
+
 			{/* cta button */}
-			<button className="flex justify-start items-center gap-1">
-				<div className="w-60 p-3.5 bg-white rounded-sm flex justify-center items-center gap-2.5">
-					<div className="justify-start text-black text-lg font-medium">
+			<button className="flex justify-start items-center gap-1 group hover:scale-105 duration-300 cursor-pointer">
+				<div className="w-60 p-3.5 bg-white rounded-sm flex justify-center items-center group-hover:bg-orange-600 duration-300 text-black   group-hover:text-white gap-2.5">
+					<div className="justify-start text-lg font-medium">
 						Explore the Marketplace
 					</div>
 				</div>
-				<div className="w-12 h-14 relative bg-white rounded-sm overflow-hidden">
+				<div className="w-12 h-14 relative bg-white rounded-sm overflow-hidden group-hover:bg-orange-600 duration-300 group-hover:text-white">
 					<div className="w-2.5 h-4 left-[21.33px] top-[16px] absolute">
-						<div className="w-1 h-1 left-0 top-0 absolute bg-orange-600" />
-						<div className="w-1 h-1 left-0 top-[13.33px] absolute bg-orange-600" />
-						<div className="w-1 h-1 left-[6.67px] top-[6.67px] absolute bg-orange-600" />
+						<div className="w-1 h-1 left-0 top-0 absolute bg-orange-600 group-hover:bg-white" />
+						<div className="w-1 h-1 left-0 top-[13.33px] absolute bg-orange-600 group-hover:bg-white" />
+						<div className="w-1 h-1 left-[6.67px] top-[6.67px] absolute bg-orange-600 group-hover:bg-white" />
 					</div>
 				</div>
 			</button>
@@ -43,7 +44,7 @@ const Hero = () => {
 			<div className="w-full py-10 md:hidden">
 				<Image
 					src={"/images/home-hero-img.png"}
-					alt="Heor image"
+					alt="Home Hero Background"
 					className="w-full"
 					priority
 					width={1900}

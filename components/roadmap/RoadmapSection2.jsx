@@ -106,7 +106,7 @@ const RoadmapSection2 = () => {
 							absolute justify-between
 							top-[31px] lg:px-40 left-0 right-0
 							bg-black bg-gradient-to-b from-[#1A1A1A] to-black
-							z-10 border-b pb-10 border-b-[#1D1D1D]
+							z-10 border-b pb-10 border-b-[#1D1D1D] pl-2
 						"
 					>
 						{roadmapPhases.map((phases, id) => (

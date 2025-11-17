@@ -23,19 +23,19 @@ const VerticalTextScroller = () => {
     <div className="items-center inline-flex">
       <div className="w-43 lg:w-57 sm:pl-2 lg:pl-3">
         {/* Text container with fixed height to prevent layout shift */}
-        <div className="relative h-20 overflow-hidden">
+        <div className="relative h-32 overflow-visible">
           {texts.map((text, index) => (
             <div
               key={index}
               className={`absolute flex items-center justify-center transition-all duration-700 ease-in-out ${
                 index === currentIndex
-                  ? "opacity-100 transform translate-y-0"
+                  ? "text-white opacity-100 transform translate-y-0"
                   : index === (currentIndex - 1 + texts.length) % texts.length
-                  ? "opacity-12 transform -translate-y-full"
-                  : "opacity-12 transform translate-y-full"
+                  ? "opacity-12 transform bg-gradient-to-t from-white/70 to-white/0 bg-clip-text text-transparent -translate-y-full"
+                  : "opacity-12 transform translate-y-full bg-gradient-to-b text-transparent from-white/70 to-white/5 bg-clip-text"
               }`}
             >
-              <h1 className="text-white">{text}</h1>
+              <h1 className="font-bold">{text}</h1>
             </div>
           ))}
         </div>

@@ -71,7 +71,7 @@ export const WhyNowSection = () => {
           </div>
 
           {/* Wrapper for horizontal scroll on small screens */}
-          <div className="w-full overflow-x-auto md:overflow-visible">
+        <div className="w-full overflow-x-auto md:overflow-visible scrollbar-thin scrollbar-thumb-gray-800 scrollbar-track-gray-950">
             <div className="flex md:grid md:grid-cols-3 gap-6 lg:gap-8 max-w-4xl mx-auto">
               {progressData.map((item, index) => (
                 <div

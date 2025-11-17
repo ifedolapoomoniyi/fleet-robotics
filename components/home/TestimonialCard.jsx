@@ -4,28 +4,22 @@ import React, { useRef, useEffect, useState } from "react";
 
 const testimonials = [
 	{
-		logo: "https://dummyimage.com/80x40/fff/000&text=Thinkseb",
+		logo: "/images/logo/thinkseb.svg",
 		text: "We needed a flexible cleaning solution for our facilities, and Fleet Robotics delivered in minutes. Posting a job was effortless, and within five minutes, a robot was on-site completing the task",
 		client: "Client Name Here",
 		role: "Founder and CEO",
 	},
 	{
-		logo: "https://dummyimage.com/40x40/fff/000&text=A",
+		logo: "/images/logo/arrow.svg",
 		text: "As a fleet operator, Fleet Robotics has completely changed how I monetize my machines. Instead of waiting for long-term contracts, I can list my robots, get instant bookings, and earn crypto directly.",
 		client: "Client Name Here",
 		role: "Founder and CEO",
 	},
 	{
-		logo: "https://dummyimage.com/80x40/fff/000&text=Oun",
+		logo: "/images/logo/oun.svg",
 		text: "“Book delivery drones, cleaning bots, and industrial machines instantly. Operators earn crypto. Jobs are managed fully on-chain with trust and transparency.”",
 		client: "Client Name Here",
 		role: "Founder and CEO",
-	},
-	{
-		logo: "https://dummyimage.com/80x40/fff/000&text=Extra",
-		text: "This is another testimonial to test scrolling behavior.",
-		client: "Another Client",
-		role: "CTO",
 	},
 ];
 
@@ -50,7 +44,7 @@ const TestimonialCards = () => {
 
 	return (
 		<section className=" text-white pl-6 relative">
-			<div className="max-w-7xl mx-auto">
+			<div className="max-w-[1450px] mx-auto">
 				{/* Arrow Controls */}
 				<div className="flex gap-4 mb-6 absolute -top-[60px]">
 					<button onClick={() => scroll("left")} className="">
@@ -72,6 +66,7 @@ const TestimonialCards = () => {
 						</div>
 					</button>
 				</div>
+				
 
 				{/* Scrollable Row */}
 				<div
@@ -81,15 +76,15 @@ const TestimonialCards = () => {
 					{testimonials.map((item, index) => (
 						<div
 							key={index}
-							className={`w-[320px] md:w-[400px] h-[500px] bg-black hover:bg-[#0B0B0B] transition-all duration-500 border border-gray-800 p-8 flex flex-col justify-between flex-shrink-0`}
+							className={`w-[320px] md:w-[400px] h-[550px] bg-black hover:bg-[#0B0B0B] transition-all duration-500 border border-[#1A1A1A] p-8 flex flex-col justify-between flex-shrink-0`}
 						>
 							<div>
 								<img
 									src={item.logo}
 									alt="Client Logo"
-									className="h-8 mb-6"
+									className="h-7 mb-14"
 								/>
-								<p className="opacity-75 leading-relaxed font-allianceNo2 text-xl">
+								<p className="opacity-75 font-allianceNo2 text-xl">
 									{item.text}
 								</p>
 							</div>
@@ -106,3 +101,5 @@ const TestimonialCards = () => {
 };
 
 export default TestimonialCards;
+
+

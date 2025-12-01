@@ -2,15 +2,8 @@ import React from "react";
 
 export const EconomicRailSection = () => {
   return (
-    <section className="relative  bg-[url('/images/what-we-do-bg.svg')] bg-cover  relative w-full h-[300px] md:h-[700px] lg:h-[700.67px] overflow-hidden">
+    <section className="relative bg-[url('/images/what-we-do-bg.svg')] bg-cover  relative w-full min-h-[90vh] overflow-hidden">
       <div className="absolute top-16  left-0 w-full h-[400px] md:h-[600px] lg:h-[779px] " />
-
-      {/* <img
-        className="absolute top-32 md:top-48 lg:top-[273px] left-0 w-full h-80 md:h-96 lg:h-[593px] object-cover"
-        alt="Group"
-        src="/group-2147257444.png"
-      /> */}
-
       <div className="absolute top-64 md:top-80 lg:top-[200px] left-4 md:left-16 right-4 md:right-16 h-48 md:h-64 lg:h-[105px] " />
 
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-16 md:-translate-y-24 lg:-translate-y-[130px] flex flex-col items-center gap-8 md:gap-12 lg:gap-[53.33px] px-4">
@@ -55,7 +48,7 @@ export const EconomicRailSection = () => {
         </div> */}
       </div>
 
-      <div className="  absolute cursor-pointer bottom-4 md:bottom-8  left-1/2 transform -translate-x-1/2 w-48 md:w-[261px] h-16 md:h-[82px] flex flex-col gap-[0.1px]">
+      <div className="  absolute cursor-pointer bottom-4 md:bottom-8  left-1/2 transform -translate-x-1/2 w-48 md:w-[261px] h-16 md:h-[82px]  flex-col gap-[0.1px] hidden sm:flex">
         <img
           className="mx-auto w-6 h-12 md:w-[29.92px] md:h-[59.19px]"
           alt="Noun mouse scroll"
